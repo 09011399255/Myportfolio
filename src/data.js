@@ -1,0 +1,57 @@
+
+export const projects = [
+  { name: 'Agrohive', desc: 'An Agricultural brand leveraging Technology', type: 'Framer Template', color: '#4CAF50', link: 'https://www.behance.net/gallery/222281357/Agrohive-(-An-Agro-tech-Industry)-Case-study' },
+  { name: 'Sporta AI', desc: 'A sport company leveraging Artificial Intelligence', type: 'Framer Template', color: '#FF5722', link: 'https://www.behance.net/gallery/220455041/Sporta-AI' },
+  { name: 'Flique', desc: 'A fast secure and intuitive crypto exchange App', type: 'Framer Template', color: '#2196F3', link: 'https://www.behance.net/gallery/232735471/Crypto-Blockchain-App-design(-Decentralised)' },
+  { name: 'Faseelh', desc: 'Free Framer Template', type: 'Framer Template', color: '#9C27B0' },
+  { name: 'Seera', desc: 'Portfolio Framer Template', type: 'Framer Template', color: '#673AB7' },
+  { name: 'Stabraq', desc: 'Portfolio Framer Template', type: 'Framer Template', color: '#3F51B5' },
+];
+
+export const experience = [
+  { company: 'Usercando', role: 'Product Designer / Operations Analyst', period: 'Aug 2025 - Jan 2026', desc: 'Collaborated with the product team to build scalable web applications.' },
+  { company: 'Inspire-Edge', role: 'UI/UX Designer', period: 'Jan 2025 - May 2025', desc: 'Designed user-centric interfaces for mobile and web apps.', link: 'https://www.inspirecraftglobal.com/' },
+  { company: 'Speak AI', role: 'Frontend Engineering Intern', period: 'Jan 2021 - May 2021', desc: 'Assisted in developing responsive websites for local businesses.', link: 'https://prompting-ai-gamma.vercel.app/' },
+];
+
+export const tools = [
+  { name: 'Figma', sub: 'Design Tool', icon: 'PenTool' },
+  { name: 'Framer', sub: 'Website Builder', icon: 'Layout' },
+  { name: 'Java', sub: 'Backend/DSA', icon: 'Coffee' },
+  { name: 'React', sub: 'Frontend Library', icon: 'Zap' },
+  { name: 'Notion', sub: 'Productivity Tool', icon: 'FileText' },
+  { name: 'ChatGPT', sub: 'AI Assistant', icon: 'Bot' },
+];
+
+export const articles = [
+  {
+    title: 'Starting and Growing a Career in Web Design',
+    desc: 'As the internet continues to develop and grow exponentially, jobs related to the industry do too, particularly those that relate to web design and development.',
+    date: 'Apr 8, 2025',
+    readTime: '6min read'
+  },
+  {
+    title: 'Creating Design Systems for Consistent User Experiences',
+    desc: 'A practical guide to building scalable design systems that improve consistency, speed up collaboration, and support growing products.',
+    date: 'Jan 15, 2026',
+    readTime: '5min read'
+  },
+  {
+    title: 'Designing Products in an AI-Driven World',
+    desc: 'A reflection on how automation, AI, and human behavior are reshaping the way we design digital products—and what it means for modern product teams.',
+    date: 'Oct 30, 2025',
+    readTime: '5min read'
+  },
+  {
+    title: 'Learning to Code as a Designer—with AI as a Co-Pilot',
+    desc: 'A practical reflection on how designers can learn to code faster and more confidently by leveraging modern AI tools without losing foundational understanding.',
+    date: 'Feb 6, 2026',
+    readTime: '5min read'
+  },
+  {
+    title: 'The Cost of Over-Design—for Users',
+    desc: 'A reflection on how over-design increases cognitive load, slows users down, and quietly introduces friction into otherwise simple experiences.',
+    date: 'Jan 12, 2026',
+    readTime: '5min read'
+  },
+];

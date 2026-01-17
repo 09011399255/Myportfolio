@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+.beyond-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.beyond-header {
+    margin-bottom: 25px;
+}
+
+.beyond-main-title {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.beyond-main-title span {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+.beyond-subtitle {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-top: 10px;
+}
+
+/* Bento Grid V2 */
+.bento-grid-v2 {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 20px;
+}
+
+.bento-item {
+    background: #1a1a1a;
+    border-radius: 24px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.right-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Reading Box (Left - Tall) */
+.reading-box-v2 {
+    background: linear-gradient(180deg, #1e1e1e 0%, #151312 100%);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
+}
+
+.card-tag {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #888;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.reading-box-v2 h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.card-desc-reading {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.book-visual-v2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.book-visual-v2 img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    transform: none;
+    z-index: 2;
+    margin-top: 25px;
+}
+
+.book-glow {
+    position: absolute;
+    bottom: -40px;
+    width: 150px;
+    height: 150px;
+    background: var(--accent-orange);
+    filter: blur(80px);
+    opacity: 0.15;
+}
+
+/* Persona Box - Orange Background */
+.persona-box-orange {
+    background: var(--accent-orange);
+    color: #fff;
+    border: none;
+}
+
+.persona-box-orange h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.persona-sub {
+    font-weight: 600;
+    opacity: 0.9;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.persona-bubbles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.bubble-white {
+    padding: 10px 22px;
+    border-radius: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bubble-white:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* People Box */
+.people-box-v2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-top-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.people-box-v2 h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+}
+
+.people-desc {
+    color: #888;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.people-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collaborators-avatars {
+    display: flex;
+    align-items: center;
+}
+
+.collaborators-avatars img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 3px solid #1a1a1a;
+    margin-left: -15px;
+}
+
+.more-collabs {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--accent-orange);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.85rem;
+    border: 3px solid #1a1a1a;
+    margin-left: -15px;
+}
+
+.collab-status {
+    font-size: 0.8rem;
+    color: var(--accent-orange);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 1100px) {
+    .bento-grid-v2 {
+        grid-template-columns: 1fr;
+    }
+
+    .beyond-main-title span {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .beyond-main-title span {
+        font-size: 3rem;
+    }
+
+    .beyond-subtitle {
+        font-size: 1.8rem;
+    }
+
+    .bento-item {
+        padding: 20px;
+    }
+
+    .reading-box-v2 {
+        padding-bottom: 20px;
+    }
+
+    .book-visual-v2 img {
+        width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .beyond-main-title span {
+        font-size: 2.22rem;
+        /* Matches screenshot vibe */
+    }
+
+    .beyond-subtitle {
+        font-size: 1.5rem;
+    }
+}

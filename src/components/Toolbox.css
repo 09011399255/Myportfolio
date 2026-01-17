@@ -1,0 +1,50 @@
+.toolbox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    row-gap: 40px;
+}
+
+.tool-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.tool-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tool-icon-img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.tool-info h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: #fff;
+}
+
+.tool-info .tool-sub {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (max-width: 600px) {
+    .toolbox-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}

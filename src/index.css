@@ -1,0 +1,162 @@
+:root {
+  --bg-color: #151312;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --text-muted: #B6B4BD;
+  --card-bg: #1a1a1a;
+  --accent-orange: #f26d40;
+  /* Adjusted from image */
+  --accent-lime: #EABE7C;
+  --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.app-root {
+  width: 100%;
+}
+
+.app-layout {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.main-layout-wrapper {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 100px;
+  padding-top: 150px;
+}
+
+.sidebar-v3 {
+  position: sticky;
+  top: 150px;
+  height: fit-content;
+}
+
+.content-v3 {
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
+}
+
+@media (max-width: 1024px) {
+  .main-layout-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-v3 {
+    position: relative;
+    top: 0;
+  }
+}
+
+.section {
+  padding: 0;
+  /* Handled by content-v3 gap */
+}
+
+.section-header {
+  margin-bottom: 60px;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.section-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title span {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+/* Utility */
+.text-orange {
+  color: var(--accent-orange);
+}
+
+.text-green {
+  color: var(--accent-green);
+}
+
+.bg-orange {
+  background-color: var(--accent-orange);
+}
+
+.bg-green {
+  background-color: var(--accent-green);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title span {
+    font-size: 3rem;
+  }
+
+  .container {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title span {
+    font-size: 2.5rem;
+  }
+
+  .main-layout-wrapper {
+    padding-top: 100px;
+    gap: 60px;
+  }
+
+  .content-v3 {
+    gap: 80px;
+  }
+}

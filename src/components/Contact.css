@@ -1,0 +1,255 @@
+.contact-section {
+    padding-bottom: 100px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 700px;
+}
+
+.quick-contact-row {
+    display: flex;
+    gap: 20px;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+.quick-contact-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quick-contact-card:hover {
+    border-color: #444;
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.quick-contact-card.whatsapp:hover {
+    border-color: #25D366;
+}
+
+.quick-contact-card.email:hover {
+    border-color: var(--accent-orange);
+}
+
+.quick-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    color: #888;
+    transition: all 0.3s;
+}
+
+.whatsapp:hover .quick-icon-wrapper {
+    background: rgba(37, 211, 102, 0.1);
+    color: #25D366;
+}
+
+.email:hover .quick-icon-wrapper {
+    background: rgba(255, 115, 0, 0.1);
+    color: var(--accent-orange);
+}
+
+.quick-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.quick-label {
+    font-size: 0.7rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.quick-value {
+    font-size: 0.95rem;
+    color: #eee;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .quick-contact-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+.input-field {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    padding: 16px;
+    font-size: 1rem;
+    color: white;
+    border-radius: 8px;
+    width: 100%;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+}
+
+textarea.input-field {
+    min-height: 150px;
+    resize: vertical;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+.submit-btn {
+    background: var(--accent-orange);
+    color: #000;
+    border: none;
+    padding: 18px;
+    font-size: 1rem;
+    font-weight: 800;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.submit-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: white;
+    transform: translateY(-2px);
+}
+
+.success-message {
+    background: var(--card-bg);
+    border: 1px solid #333;
+    padding: 60px 40px;
+    border-radius: 16px;
+    text-align: center;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    animation: fadeInScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.success-icon-bg {
+    width: 80px;
+    height: 80px;
+    background: rgba(37, 211, 102, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #25D366;
+    margin-bottom: 10px;
+}
+
+.success-message h3 {
+    font-size: 1.8rem;
+    color: white;
+    margin: 0;
+}
+
+.success-message p {
+    color: #888;
+    margin: 0;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+.reset-btn {
+    background: transparent;
+    border: 1px solid #333;
+    color: #888;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.reset-btn:hover {
+    border-color: #666;
+    color: white;
+}
+
+.error-text {
+    color: #ff4b2b;
+    font-size: 0.85rem;
+    margin-top: 15px;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+    }
+}
