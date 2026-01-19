@@ -6,7 +6,6 @@ const Header = ({ activeSection, setActiveSection }) => {
         { id: 'home', icon: Home },
         { id: 'projects', icon: Folder },
         { id: 'experience', icon: Briefcase },
-        { id: 'toolbox', icon: Settings },
         { id: 'articles', icon: BookOpen },
         { id: 'beyond', icon: Compass },
         { id: 'contact', icon: Send },

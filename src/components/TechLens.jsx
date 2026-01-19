@@ -6,6 +6,7 @@ import designSystemImg from '../assets/image.png';
 import codeImg from '../assets/Code.png';
 import firstImg from '../assets/First.png';
 import overDesignImg from '../assets/overdesign.png';
+import industrialImg from '../assets/industrial.png';
 
 const TechLens = ({ limit, onArticleClick }) => {
     const displayedArticles = limit ? articles.slice(0, limit) : articles;
@@ -14,7 +15,7 @@ const TechLens = ({ limit, onArticleClick }) => {
         const t = title.toLowerCase();
         if (t.includes('design system')) return designSystemImg;
         if (t.includes('ai-driven')) return "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2070";
-        if (t.includes('industrial engineering')) return "https://images.unsplash.com/photo-1581094794329-c8112a4e5190?auto=format&fit=crop&q=80&w=2070";
+        if (t.includes('industrial engineering')) return industrialImg;
         if (t.includes('learning to code')) return codeImg;
         if (t.includes('over-design')) return overDesignImg;
         if (t.includes('how i use ai')) return "https://images.unsplash.com/photo-1675271591211-126ad94e495d?auto=format&fit=crop&q=80&w=2070";
@@ -25,8 +26,8 @@ const TechLens = ({ limit, onArticleClick }) => {
         <div className="section" id="techlens">
             <div className="section-header">
                 <h2 className="section-title">
-                    <span className="text-white">DESIGN</span>
-                    <span className="text-muted-custom">THOUGHTS</span>
+                    <span className="text-white">PROCESS &</span>
+                    <span className="text-muted-custom">PIXELS</span>
                 </h2>
             </div>
 

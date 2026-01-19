@@ -1,5 +1,4 @@
 import React from 'react';
-import { Sparkles, Moon, Cat, Users } from 'lucide-react';
 import bookImg from '../assets/book.png';
 import './BeyondPortfolio.css';
 
@@ -52,7 +51,6 @@ const BeyondPortfolio = () => {
                         {/* People I Build With - Dark/Teal Accent */}
                         <div className="bento-item people-box-v2">
                             <div className="card-top-row">
-                                <Users size={20} style={{ color: 'var(--accent-orange)' }} />
                                 <h3>People I Build With</h3>
                             </div>
                             <p className="people-desc">Designers, developers & dreamers who help bring big ideas to life. Together we turn complex problems into elegant solutions.</p>

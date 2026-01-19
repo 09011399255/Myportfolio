@@ -1,11 +1,10 @@
 
 export const projects = [
   { name: 'Agrohive', desc: 'An Agricultural brand leveraging Technology', type: 'Framer Template', color: '#4CAF50', link: 'https://www.behance.net/gallery/222281357/Agrohive-(-An-Agro-tech-Industry)-Case-study' },
-  { name: 'Sporta AI', desc: 'A sport company leveraging Artificial Intelligence', type: 'Framer Template', color: '#FF5722', link: 'https://www.behance.net/gallery/220455041/Sporta-AI' },
+  { name: 'Conova', desc: 'A workspace booking and management application.', type: 'Mobile App', color: '#FFD700', link: '#', internal: true },
   { name: 'Flique', desc: 'A fast secure and intuitive crypto exchange App', type: 'Framer Template', color: '#2196F3', link: 'https://www.behance.net/gallery/232735471/Crypto-Blockchain-App-design(-Decentralised)' },
-  { name: 'Faseelh', desc: 'Free Framer Template', type: 'Framer Template', color: '#9C27B0' },
-  { name: 'Seera', desc: 'Portfolio Framer Template', type: 'Framer Template', color: '#673AB7' },
-  { name: 'Stabraq', desc: 'Portfolio Framer Template', type: 'Framer Template', color: '#3F51B5' },
+  { name: 'Solara', desc: 'A unified case management and marketplace platform for modern funeral homes.', type: 'SaaS Platform', color: '#38BDF8', link: 'https://www.getsolara.tech/' },
+  { name: 'Sporta AI', desc: 'A sport company leveraging Artificial Intelligence', type: 'Framer Template', color: '#FF5722', link: 'https://www.behance.net/gallery/220454041/Sporta-AI' },
 ];
 
 export const experience = [

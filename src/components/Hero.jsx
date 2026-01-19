@@ -130,29 +130,25 @@ const Hero = ({ sidebarOnly, contentOnly }) => {
                     </div>
 
                     <div className="hero-cta-grid-v2">
-                        <div className="cta-card-v2 orange-card">
-                            <div className="cta-texture">
-                                <svg viewBox="0 0 400 200" preserveAspectRatio="none">
-                                    <path d="M0 100 Q 100 50 200 100 T 400 100" stroke="rgba(255,255,255,0.2)" fill="none" strokeWidth="30" />
-                                    <path d="M0 140 Q 100 90 200 140 T 400 140" stroke="rgba(255,255,255,0.1)" fill="none" strokeWidth="30" />
-                                </svg>
-                            </div>
+                        <div
+                            className="cta-card-v2 orange-card clickable"
+                            onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            <div className="cta-texture"></div>
 
-                            <h4>Intuitive and high converting website and mobile apps</h4>
+                            <h4>Building intuitive and high-performing digital experiences across web and mobile platforms</h4>
                             <div className="cta-arrow-btn">
                                 <ArrowRight size={20} />
                             </div>
                         </div>
 
-                        <div className="cta-card-v2 lime-card">
-                            <div className="cta-texture">
-                                <svg viewBox="0 0 400 200" preserveAspectRatio="none">
-                                    <path d="M0 180 L 50 40 L 100 150 L 150 20 L 200 120 L 250 10 L 300 160 L 350 40 L 400 180"
-                                        stroke="rgba(0,0,0,0.1)" fill="none" strokeWidth="2" />
-                                </svg>
-                            </div>
+                        <div
+                            className="cta-card-v2 lime-card clickable"
+                            onClick={() => document.getElementById('techlens')?.scrollIntoView({ behavior: 'smooth' })}
+                        >
+                            <div className="cta-texture"></div>
 
-                            <h4 className="text-black">Figma, React, and no code technologies</h4>
+                            <h4 className="text-black">Optimizing systems and processes to build better and faster products</h4>
                             <div className="cta-arrow-btn dark">
                                 <ArrowRight size={20} />
                             </div>

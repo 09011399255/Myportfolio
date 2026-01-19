@@ -161,6 +161,25 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-card-v2.clickable {
+    cursor: pointer;
+}
+
+.cta-card-v2.clickable:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-card-v2.clickable:hover .cta-arrow-btn {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.cta-card-v2.clickable:hover .cta-arrow-btn.dark {
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .orange-card {
@@ -173,9 +192,9 @@
 
 .lime-card {
     background-color: var(--accent-lime);
-    color: #333333;
+    color: #000000;
     background-image: url('../assets/Texture.png');
-    background-blend-mode: multiply;
+    background-blend-mode: soft-light;
     background-size: cover;
 }
 
@@ -185,16 +204,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.6;
+    opacity: 0.8;
+    pointer-events: none;
 }
 
 
 
 .cta-card-v2 h4 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    max-width: 260px;
-    line-height: 1.2;
+    font-size: 1.15rem;
+    font-weight: 600;
+    max-width: 280px;
+    line-height: 1.4;
     position: relative;
     z-index: 2;
 }
@@ -211,6 +231,7 @@
     align-items: center;
     justify-content: center;
     z-index: 2;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .cta-arrow-btn.dark {
@@ -218,7 +239,7 @@
 }
 
 .text-black {
-    color: #333333;
+    color: #000000;
 }
 
 /* Responsive */

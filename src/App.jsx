@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
@@ -8,11 +8,14 @@ import TechLens from './components/TechLens';
 import BeyondPortfolio from './components/BeyondPortfolio';
 import Contact from './components/Contact';
 import ArticleDetail from './components/ArticleDetail';
+import InDev from './components/InDev';
 import { AnimatePresence, motion } from 'framer-motion';
 
+
 function App() {
-  const [activeSection, setActiveSection] = React.useState('home');
-  const [selectedArticle, setSelectedArticle] = React.useState(null);
+  const [activeSection, setActiveSection] = useState('home');
+  const [selectedArticle, setSelectedArticle] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   // When section changes, scroll to top of the content area
   React.useEffect(() => {
@@ -24,17 +27,23 @@ function App() {
     setActiveSection('article-detail');
   };
 
+  const handleProjectClick = (project) => {
+    setSelectedProject(project);
+    setActiveSection('project-dev');
+  };
+
   const renderContent = () => {
     if (activeSection === 'home') {
       return (
         <>
           <Hero contentOnly={true} />
-          <Projects />
+          <Projects onProjectClick={handleProjectClick} />
           <Experience />
           <Toolbox />
           <TechLens limit={3} onArticleClick={handleArticleClick} />
           <BeyondPortfolio />
           <Contact />
+
         </>
       );
     }
@@ -49,9 +58,13 @@ function App() {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="content-v3"
         >
-          {activeSection === 'projects' && <Projects />}
-          {activeSection === 'experience' && <Experience />}
-          {activeSection === 'toolbox' && <Toolbox />}
+          {activeSection === 'projects' && <Projects onProjectClick={handleProjectClick} />}
+          {activeSection === 'experience' && (
+            <>
+              <Experience />
+              <Toolbox />
+            </>
+          )}
           {activeSection === 'articles' && <TechLens onArticleClick={handleArticleClick} />}
           {activeSection === 'beyond' && <BeyondPortfolio />}
           {activeSection === 'contact' && <Contact />}
@@ -59,6 +72,12 @@ function App() {
             <ArticleDetail
               article={selectedArticle}
               onBack={() => setActiveSection('articles')}
+            />
+          )}
+          {activeSection === 'project-dev' && (
+            <InDev
+              project={selectedProject}
+              onBack={() => setActiveSection('home')}
             />
           )}
 

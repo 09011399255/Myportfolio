@@ -5,6 +5,7 @@ import designSystemImg from '../assets/image.png';
 import codeImg from '../assets/Code.png';
 import firstImg from '../assets/First.png';
 import overDesignImg from '../assets/overdesign.png';
+import industrialImg from '../assets/industrial.png';
 
 const ArticleDetail = ({ article, onBack }) => {
     useEffect(() => {
@@ -26,8 +27,8 @@ const ArticleDetail = ({ article, onBack }) => {
             imgSrc = "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2070";
             altText = "AI and Human hands interacting";
         } else if (title.toLowerCase().includes('industrial engineering')) {
-            imgSrc = "https://images.unsplash.com/photo-1581094794329-c8112a4e5190?auto=format&fit=crop&q=80&w=2070";
-            altText = "Industrial system and technical blueprints";
+            imgSrc = industrialImg;
+            altText = "Modern workplace showing workforce and process optimization";
         } else if (title.toLowerCase().includes('learning to code')) {
             imgSrc = codeImg;
             altText = "Code on a screen";

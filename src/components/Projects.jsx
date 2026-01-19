@@ -3,14 +3,18 @@ import { ArrowUpRight } from 'lucide-react';
 import agrohiveImg from '../assets/Agrohive.png';
 import sportaImg from '../assets/Sporta.png';
 import fliqueImg from '../assets/Flique.png';
+import solaraImg from '../assets/Solara.png';
+import conovaImg from '../assets/Conova.png';
 import { projects } from '../data';
 import './Projects.css';
 
-const Projects = () => {
+const Projects = ({ onProjectClick }) => {
     const getProjectImage = (name) => {
         if (name === 'Agrohive') return agrohiveImg;
         if (name === 'Sporta AI') return sportaImg;
         if (name === 'Flique') return fliqueImg;
+        if (name === 'Solara') return solaraImg;
+        if (name === 'Conova') return conovaImg;
         return null;
     };
 
@@ -26,8 +30,24 @@ const Projects = () => {
             <div className="projects-list-v2">
                 {projects.map((project, index) => {
                     const img = getProjectImage(project.name);
+                    const isInternal = project.internal;
+
+                    const handleClick = (e) => {
+                        if (isInternal) {
+                            e.preventDefault();
+                            onProjectClick && onProjectClick(project);
+                        }
+                    };
+
                     return (
-                        <a href={project.link || "#"} target={project.link ? "_blank" : "_self"} rel="noopener noreferrer" className="project-row-v2" key={index}>
+                        <a
+                            href={project.link || "#"}
+                            target={project.link && !isInternal ? "_blank" : "_self"}
+                            rel="noopener noreferrer"
+                            className="project-row-v2"
+                            key={index}
+                            onClick={handleClick}
+                        >
                             <div className="project-row-left">
                                 <div
                                     className="project-thumb-v2"
