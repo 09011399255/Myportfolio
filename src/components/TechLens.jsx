@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { articles } from '../data';
 import './TechLens.css';
 import designSystemImg from '../assets/image.png';
@@ -33,7 +34,11 @@ const TechLens = ({ limit, onArticleClick }) => {
 
             <div className="articles-list">
                 {displayedArticles.map((article, index) => (
-                    <div
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
                         className="article-item clickable"
                         key={index}
                         onClick={() => onArticleClick && onArticleClick(article)}
@@ -54,7 +59,7 @@ const TechLens = ({ limit, onArticleClick }) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>

@@ -9,6 +9,7 @@ import BeyondPortfolio from './components/BeyondPortfolio';
 import Contact from './components/Contact';
 import ArticleDetail from './components/ArticleDetail';
 import InDev from './components/InDev';
+import ScrollReveal from './components/ScrollReveal';
 import { AnimatePresence, motion } from 'framer-motion';
 
 
@@ -36,13 +37,13 @@ function App() {
     if (activeSection === 'home') {
       return (
         <>
-          <Hero contentOnly={true} />
-          <Projects onProjectClick={handleProjectClick} />
-          <Experience />
-          <Toolbox />
-          <TechLens limit={3} onArticleClick={handleArticleClick} />
-          <BeyondPortfolio />
-          <Contact />
+          <ScrollReveal><Hero contentOnly={true} /></ScrollReveal>
+          <ScrollReveal delay={0.1}><Projects onProjectClick={handleProjectClick} /></ScrollReveal>
+          <ScrollReveal delay={0.1}><Experience /></ScrollReveal>
+          <ScrollReveal delay={0.1}><Toolbox /></ScrollReveal>
+          <ScrollReveal delay={0.1}><TechLens limit={3} onArticleClick={handleArticleClick} /></ScrollReveal>
+          <ScrollReveal delay={0.1}><BeyondPortfolio /></ScrollReveal>
+          <ScrollReveal delay={0.1}><Contact /></ScrollReveal>
 
         </>
       );

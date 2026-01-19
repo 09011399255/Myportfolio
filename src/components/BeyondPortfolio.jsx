@@ -1,5 +1,11 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import bookImg from '../assets/book.png';
+import yusuffImg from '../assets/build/yusuff.png';
+import markImg from '../assets/build/Mark.png';
+import bethanImg from '../assets/build/Bethan.png';
+import bolarinwaImg from '../assets/build/Bolarinwa.png';
+import sultanImg from '../assets/build/Sultan.png';
 import './BeyondPortfolio.css';
 
 const BeyondPortfolio = () => {
@@ -18,7 +24,13 @@ const BeyondPortfolio = () => {
                 {/* Bento Grid Layout - 3 Cards Left */}
                 <div className="bento-grid-v2">
                     {/* Main Reading Card - Left Column */}
-                    <div className="bento-item reading-box-v2">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="bento-item reading-box-v2"
+                    >
                         <div className="card-top">
                             <span className="card-tag">LIFESTYLE</span>
                             <h3>Currently Reading</h3>
@@ -28,12 +40,18 @@ const BeyondPortfolio = () => {
                             <img src={bookImg} alt="Book" />
                             <div className="book-glow"></div>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* Right Column Stack */}
                     <div className="right-stack">
                         {/* Persona Card - Branded Orange */}
-                        <div className="bento-item persona-box-orange">
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.1 }}
+                            className="bento-item persona-box-orange"
+                        >
                             <div className="persona-content">
                                 <div className="card-top-row">
                                     <h3>My Persona</h3>
@@ -46,25 +64,31 @@ const BeyondPortfolio = () => {
                                     <span className="bubble-white">Social</span>
                                 </div>
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* People I Build With - Dark/Teal Accent */}
-                        <div className="bento-item people-box-v2">
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            className="bento-item people-box-v2"
+                        >
                             <div className="card-top-row">
                                 <h3>People I Build With</h3>
                             </div>
                             <p className="people-desc">Designers, developers & dreamers who help bring big ideas to life. Together we turn complex problems into elegant solutions.</p>
                             <div className="people-footer">
                                 <div className="collaborators-avatars">
-                                    <img src="https://i.pravatar.cc/100?u=11" alt="Avatar" />
-                                    <img src="https://i.pravatar.cc/100?u=22" alt="Avatar" />
-                                    <img src="https://i.pravatar.cc/100?u=33" alt="Avatar" />
-                                    <img src="https://i.pravatar.cc/100?u=44" alt="Avatar" />
+                                    <img src={yusuffImg} alt="Yusuff" />
+                                    <img src={markImg} alt="Mark" />
+                                    <img src={bethanImg} alt="Bethan" />
+                                    <img src={bolarinwaImg} alt="Bolarinwa" />
+                                    <img src={sultanImg} alt="Sultan" />
                                     <div className="more-collabs">+12</div>
                                 </div>
-                                <span className="collab-status">Currently Active</span>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import * as LucideScore from 'lucide-react';
 import { tools } from '../data';
 import './Toolbox.css';
@@ -36,7 +37,14 @@ const Toolbox = () => {
 
             <div className="toolbox-grid">
                 {tools.map((tool, index) => (
-                    <div className="tool-card" key={index}>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: index * 0.05 }}
+                        className="tool-card"
+                        key={index}
+                    >
                         <div className="tool-icon-wrapper">
                             <IconWrapper name={tool.name} iconName={tool.icon} />
                         </div>
@@ -44,7 +52,7 @@ const Toolbox = () => {
                             <h4>{tool.name}</h4>
                             <p className="tool-sub">{tool.sub}</p>
                         </div>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>

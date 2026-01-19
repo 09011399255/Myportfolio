@@ -11,7 +11,7 @@ const Hero = ({ sidebarOnly, contentOnly }) => {
     useEffect(() => {
         const interval = setInterval(() => {
             setRoleIndex((prev) => (prev + 1) % roles.length);
-        }, 3000);
+        }, 1500);
         return () => clearInterval(interval);
     }, []);
 

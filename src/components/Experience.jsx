@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { experience } from '../data';
 import './Experience.css';
 
@@ -30,7 +31,11 @@ const Experience = () => {
                     );
 
                     return exp.link ? (
-                        <a
+                        <motion.a
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
                             href={exp.link}
                             target="_blank"
                             rel="noopener noreferrer"
@@ -38,11 +43,18 @@ const Experience = () => {
                             key={index}
                         >
                             {content}
-                        </a>
+                        </motion.a>
                     ) : (
-                        <div className="experience-item" key={index}>
+                        <motion.div
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                            className="experience-item"
+                            key={index}
+                        >
                             {content}
-                        </div>
+                        </motion.div>
                     );
                 })}
             </div>

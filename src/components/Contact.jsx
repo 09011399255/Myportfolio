@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import { MessageCircle, Mail, CheckCircle, Loader2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import './Contact.css';
@@ -60,7 +61,11 @@ const Contact = () => {
             <div className="contact-info-section">
                 <h3 className="contact-subtitle">Contact Information</h3>
                 <div className="quick-contact-row">
-                    <a
+                    <motion.a
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4 }}
                         href="https://wa.me/2349011399255"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -73,8 +78,12 @@ const Contact = () => {
                             <span className="quick-label">WhatsApp</span>
                             <span className="quick-value">09011399255</span>
                         </div>
-                    </a>
-                    <a
+                    </motion.a>
+                    <motion.a
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.4, delay: 0.1 }}
                         href="mailto:suarauuthman@gmail.com"
                         className="quick-contact-card email"
                     >
@@ -85,7 +94,7 @@ const Contact = () => {
                             <span className="quick-label">Email</span>
                             <span className="quick-value">suarauuthman@gmail.com</span>
                         </div>
-                    </a>
+                    </motion.a>
                 </div>
             </div>
 
@@ -108,7 +117,11 @@ const Contact = () => {
                             <button onClick={() => setStatus('')} className="reset-btn">Send Another Message</button>
                         </div>
                     ) : (
-                        <form
+                        <motion.form
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
                             onSubmit={handleSubmit}
                             className="contact-form"
                         >
@@ -145,7 +158,7 @@ const Contact = () => {
                             {status === 'ERROR' && (
                                 <p className="error-text">Something went wrong. Please try again or use the buttons above.</p>
                             )}
-                        </form>
+                        </motion.form>
                     )}
                 </div>
             </div>

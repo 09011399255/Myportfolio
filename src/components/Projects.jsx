@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import agrohiveImg from '../assets/Agrohive.png';
 import sportaImg from '../assets/Sporta.png';
 import fliqueImg from '../assets/Flique.png';
@@ -40,7 +41,11 @@ const Projects = ({ onProjectClick }) => {
                     };
 
                     return (
-                        <a
+                        <motion.a
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
                             href={project.link || "#"}
                             target={project.link && !isInternal ? "_blank" : "_self"}
                             rel="noopener noreferrer"
@@ -73,7 +78,7 @@ const Projects = ({ onProjectClick }) => {
                             <div className="project-row-arrow">
                                 <ArrowUpRight size={24} />
                             </div>
-                        </a>
+                        </motion.a>
                     );
                 })}
             </div>
