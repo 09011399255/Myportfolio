@@ -429,6 +429,87 @@ const ArticleDetail = ({ article, onBack }) => {
             );
         }
 
+        if (title.toLowerCase().includes('over-design')) {
+            return (
+                <div className="article-body">
+                    <p>
+                        As designers, our natural instinct is often to add. We add features to provide more value,
+                        we add visual flourishes to create "delight," and we add complex animations to showcase
+                        innovation. But there is a hidden cost to this additive mindset—one that is paid by the user.
+                    </p>
+                    <p>
+                        Over-design isn't about making things "too pretty." It's about introducing more complexity
+                        than a task requires. When we over-design, we force users to work harder to achieve their goals,
+                        quietly eroding trust and efficiency.
+                    </p>
+
+                    <h2>The Law of Conservation of Complexity</h2>
+                    <p>
+                        In product design, complexity never truly disappears; it can only be moved. If we don't
+                        do the hard work of simplifying a system during the design phase, we effectively offload
+                        that complexity onto the user.
+                    </p>
+                    <p>
+                        Steve Krug, in his seminal book <strong>"Don't Make Me Think,"</strong> argues that every
+                        unnecessary choice we force upon a user adds to their cognitive load. Each time a user
+                        has to stop and think—"Where do I click?", "What does this icon mean?", or "How do I get back?"—we
+                        are draining their mental "battery." A great design should feel invisible, acting as a clear
+                        conduit between the user's intent and the system's response.
+                    </p>
+
+                    <h2>Affordances and Signifiers</h2>
+                    <p>
+                        Don Norman’s <strong>"The Design of Everyday Things"</strong> introduced us to the concepts
+                        of <em>affordances</em> (what an object can do) and <em>signifiers</em> (the signals that
+                        tell us what it can do). Over-design often muddies these signals.
+                    </p>
+                    <p>
+                        Think of a door with a beautiful, ornate handle that looks like it should be pulled,
+                        but the door actually requires a push. That is a failure of signifiers. In digital products,
+                        this happens when we make non-interactive elements look like buttons, or when we hide
+                        essential navigation behind "clever" but non-standard gestures. When a user's mental model
+                        collides with a designer's creative assumption, friction is the only result.
+                    </p>
+
+                    <h2>The Paradox of Choice</h2>
+                    <p>
+                        We often assume that more options lead to a better experience. However, <em>Hick’s Law</em>
+                        tells us that the time it takes to make a decision increases with the number and complexity
+                        of choices. By over-designing interfaces with too many competing calls to action (CTAs), we
+                        paralyze the user.
+                    </p>
+                    <p>
+                        The goal should be <strong>radical clarity</strong>. Every element on a screen must justify
+                        its existence. If it doesn't help the user complete their current task, it's noise.
+                    </p>
+
+                    <h2>Designing for the "Flow State"</h2>
+                    <p>
+                        Great products allow users to enter a state of "flow," where they are so engaged in their
+                        task that the tool itself disappears. Over-design—whether through intrusive pop-ups,
+                        unnecessary confirmation steps, or over-the-top transitions—breaks this flow.
+                    </p>
+                    <p>
+                        As a Design Engineer, I've learned that the most "innovative" solution is often the one
+                        that removes steps rather than adding them. It’s about finding the <em>Minimum Viable
+                            Sophistication</em>—the point where a design is powerful enough to handle the job, but
+                        simple enough to stay out of the way.
+                    </p>
+
+                    <h2>Conclusion: Subtract Until It Breaks</h2>
+                    <p>
+                        The next time you're reviewing a design, don't just ask "What else can we add?"
+                        Instead, ask: <strong>"What can we take away without breaking the core experience?"</strong>
+                    </p>
+                    <p>
+                        True sophistication in design isn't found in complexity, but in the elegance of
+                        simplicity. As Antoine de Saint-Exupéry famously said: <em>"Perfection is achieved,
+                            not when there is nothing more to add, but when there is nothing left to take away."</em>
+                    </p>
+                </div>
+            );
+        }
+
     };
 
     return (
