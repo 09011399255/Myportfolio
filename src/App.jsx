@@ -76,7 +76,7 @@ function App() {
       <div className="app-layout">
         <div className="container">
           <div className="main-layout-wrapper">
-            <aside className="sidebar-v3">
+            <aside className={`sidebar-v3 ${activeSection !== 'home' ? 'sidebar-mobile-hidden' : ''}`}>
               <Hero sidebarOnly={true} />
             </aside>
 

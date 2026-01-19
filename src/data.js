@@ -25,8 +25,8 @@ export const tools = [
 
 export const articles = [
   {
-    title: 'Starting and Growing a Career in Web Design',
-    desc: 'As the internet continues to develop and grow exponentially, jobs related to the industry do too, particularly those that relate to web design and development.',
+    title: 'How I Use AI to Improve My Workflow as a Design Engineer',
+    desc: 'A reflection on how AI has transformed my design process—from deeper user research and flow analysis to precision prompting as a design engineer.',
     date: 'Apr 8, 2025',
     readTime: '6min read'
   },
@@ -43,10 +43,10 @@ export const articles = [
     readTime: '5min read'
   },
   {
-    title: 'Learning to Code as a Designer—with AI as a Co-Pilot',
-    desc: 'A practical reflection on how designers can learn to code faster and more confidently by leveraging modern AI tools without losing foundational understanding.',
+    title: 'How My Background in Industrial Engineering Helps Me Design Better — With AI',
+    desc: 'How industrial engineering foundations—influenced by the principles of The Phoenix Project—shape a systems-first approach to design and productivity.',
     date: 'Feb 6, 2026',
-    readTime: '5min read'
+    readTime: '6min read'
   },
   {
     title: 'The Cost of Over-Design—for Users',

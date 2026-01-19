@@ -76,6 +76,10 @@ ul {
     position: relative;
     top: 0;
   }
+
+  .sidebar-v3.sidebar-mobile-hidden {
+    display: none;
+  }
 }
 
 .section {

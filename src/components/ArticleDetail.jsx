@@ -25,16 +25,22 @@ const ArticleDetail = ({ article, onBack }) => {
         } else if (title.toLowerCase().includes('ai-driven')) {
             imgSrc = "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=2070";
             altText = "AI and Human hands interacting";
+        } else if (title.toLowerCase().includes('industrial engineering')) {
+            imgSrc = "https://images.unsplash.com/photo-1581094794329-c8112a4e5190?auto=format&fit=crop&q=80&w=2070";
+            altText = "Industrial system and technical blueprints";
         } else if (title.toLowerCase().includes('learning to code')) {
             imgSrc = codeImg;
             altText = "Code on a screen";
         } else if (title.toLowerCase().includes('over-design')) {
             imgSrc = overDesignImg;
             altText = "Wireframe and Laptop view";
+        } else if (title.toLowerCase().includes('how i use ai')) {
+            imgSrc = "https://images.unsplash.com/photo-1675271591211-126ad94e495d?auto=format&fit=crop&q=80&w=2070";
+            altText = "Abstract AI nodes and connections";
         } else {
             // Default first article
             imgSrc = firstImg;
-            altText = "Career in Web Design";
+            altText = "Article Illustration";
         }
 
         return (
@@ -170,6 +176,105 @@ const ArticleDetail = ({ article, onBack }) => {
             );
         }
 
+        if (title.toLowerCase().includes('industrial engineering')) {
+            return (
+                <div className="article-body">
+                    <p>
+                        Before I became deeply involved in design and product, my foundation was in
+                        <strong> Industrial and Operations Engineering</strong>. That background fundamentally
+                        shaped how I think — not just about interfaces, but about systems, people, workflows,
+                        and outcomes.
+                    </p>
+                    <p>
+                        I don’t look at products in isolation. I look at the entire system: how work flows
+                        through people, tools, decisions, and constraints — and how to make that system
+                        more efficient, effective, and sustainable. Today, AI amplifies that mindset.
+                    </p>
+
+                    <h2>Thinking in Systems, Not Screens</h2>
+                    <p>
+                        As an operations and industrial engineer, my responsibility was never limited to
+                        “doing my part.” It was about understanding the end-to-end process: identifying
+                        where work slows down, where effort is wasted, and where quality drops under pressure.
+                    </p>
+                    <p>
+                        That same thinking carries directly into my design work. When I design a feature or
+                        a dashboard, I’m not only asking if it's usable. I’m asking:
+                    </p>
+                    <ul>
+                        <li>Does this reduce cognitive load?</li>
+                        <li>Does this shorten decision time?</li>
+                        <li>Does this eliminate unnecessary steps?</li>
+                        <li>Does this help teams move faster without burning out?</li>
+                    </ul>
+                    <p>
+                        AI helps me model and validate these questions faster than ever before.
+                    </p>
+
+                    <h2>The Phoenix Project & Workflow Analysis</h2>
+                    <p>
+                        My process is deeply influenced by <strong>"The Phoenix Project"</strong>.
+                        In several companies, I worked as an operations engineer alongside design and
+                        product teams. I also acted as a <strong>Scrum Master</strong>, where my focus
+                        was improving how the entire team worked — not just what they delivered.
+                    </p>
+                    <p>
+                        Using AI, I now replicate that process by analyzing workflow patterns, identifying
+                        bottlenecks in task handoffs, and stress-testing delivery timelines before they break.
+                        Instead of relying purely on intuition, AI allows me to quantify friction.
+                    </p>
+
+                    <h2>Balancing Utilization Without Burning People Out</h2>
+                    <p>
+                        One of the most valuable lessons from industrial engineering is this:
+                        <strong>Maximum utilization does not equal maximum productivity.</strong>
+                    </p>
+                    <p>
+                        With AI, I can model scenarios to ensure that no single team member becomes a
+                        "Brent" (the single point of failure). I look at:
+                    </p>
+                    <ul>
+                        <li>What happens if one designer or engineer is overloaded?</li>
+                        <li>How work quality degrades when utilization exceeds sustainable limits.</li>
+                        <li>Where redistributing tasks improves output without increasing hours.</li>
+                    </ul>
+
+                    <h2>Metrics I Care About (and Design For)</h2>
+                    <p>
+                        Because of my background, I naturally think in metrics. AI helps me surface and interpret them:
+                    </p>
+                    <ul>
+                        <li><strong>Cycle Time:</strong> How long it takes to move from idea to delivery.</li>
+                        <li><strong>Throughput:</strong> How much value a system produces over time.</li>
+                        <li><strong>Work-in-Progress (WIP):</strong> How much unfinished work creates hidden delays.</li>
+                        <li><strong>Utilization Rate:</strong> Identifying overworked vs underutilized team members.</li>
+                        <li><strong>Rework Rate:</strong> How often unclear design causes wasted effort.</li>
+                    </ul>
+
+                    <h2>AI as a Decision-Support Tool</h2>
+                    <p>
+                        AI doesn’t make decisions for me — it helps me see the system more clearly. I use
+                        it to simulate operational outcomes and compare trade-offs between speed, quality, and cost.
+                        This is where my roles intersect:
+                    </p>
+                    <p>
+                        <strong>Industrial Engineer</strong> → understands systems
+                        &nbsp;|&nbsp;
+                        <strong>Operations Engineer</strong> → optimizes workflows
+                        &nbsp;|&nbsp;
+                        <strong>Design Engineer</strong> → translates complexity into clarity.
+                    </p>
+
+                    <h2>Conclusion: Aesthetics Meet Efficiency</h2>
+                    <p>
+                        I don’t design for aesthetics alone. I design for <strong>flow, efficiency, resilience, and people</strong>.
+                        Aligning user experience with business reality is my core strength.
+                        AI simply allows me to do that work faster, deeper, and with fewer blind spots.
+                    </p>
+                </div>
+            );
+        }
+
         if (title.toLowerCase().includes('learning to code')) {
             return (
                 <div className="article-body">
@@ -227,123 +332,102 @@ const ArticleDetail = ({ article, onBack }) => {
             );
         }
 
-        if (title.toLowerCase().includes('over-design')) {
+        if (title.toLowerCase().includes('how i use ai') || title.toLowerCase().includes('starting and growing')) {
             return (
                 <div className="article-body">
                     <p>
-                        Design is often judged by how it looks, but users experience products through how they feel to use. When interfaces are over-designed—too many options, too much visual emphasis, too many interactions—the cost isn’t paid by the design team. It’s paid by the user.
+                        Artificial Intelligence is no longer a novelty in my workflow. It has become a reliable,
+                        mission-critical co-pilot—one that helps me move faster without compromising judgment,
+                        clarity, or design quality. I don’t use AI to replace thinking; I use it to amplify it.
                     </p>
                     <p>
-                        Over-design rarely comes from bad intent. It usually comes from a desire to be thorough, expressive, or impressive. But users don’t arrive to admire design decisions. They arrive with a goal.
-                    </p>
-
-                    <h2>When design asks users to work harder</h2>
-                    <p>
-                        Every visual element asks something of the user: attention, interpretation, or action. When too many elements compete at once, users are forced to slow down and decide what matters. This increases cognitive load, even when the interface looks polished.
-                    </p>
-                    <p>
-                        Animations, illustrations, and feature-rich layouts can be valuable—but only when they support the task at hand. When they don’t, they become obstacles disguised as enhancements.
-                    </p>
-                    <p>
-                        For users, simplicity isn’t about minimalism. It’s about effort.
+                        By integrating AI across research, design, systems thinking, and engineering,
+                        I’ve been able to reduce friction, eliminate repetitive work, and focus more deeply
+                        on decision-making, user empathy, and execution precision.
                     </p>
 
-                    <h2>More choice doesn’t mean more control.</h2>
+                    <h2>AI as a Research Partner, Not a Shortcut</h2>
                     <p>
-                        Designers often add options to give users flexibility. In practice, too many choices can do the opposite. Users hesitate, second-guess, or abandon tasks altogether.
+                        User research is one of the most cognitively demanding parts of product design.
+                        I use AI—primarily ChatGPT and Claude—to synthesize qualitative and quantitative
+                        inputs: interview notes, product feedback, reviews, internal assumptions, and edge cases.
                     </p>
                     <p>
-                        What feels like empowerment from a design perspective can feel like pressure from a user’s perspective. Good design reduces the number of decisions users have to make, not increases them.
+                        Instead of asking surface-level questions, I prompt AI to:
                     </p>
+                    <ul>
+                        <li>Identify recurring behavioral patterns</li>
+                        <li>Surface hidden or underserved user needs</li>
+                        <li>Stress-test assumptions</li>
+                        <li>Generate alternative personas and edge scenarios</li>
+                    </ul>
                     <p>
-                        Restraint is a form of respect.
-                    </p>
-
-                    <h2>The hidden cost users never complain about.</h2>
-                    <p>
-                        Users rarely say, “This product is over-designed.” Instead, they describe it as confusing, overwhelming, or hard to use. Sometimes they say nothing at all—they just leave.
-                    </p>
-                    <p>
-                        Over-design introduces small inefficiencies that compound over time: extra clicks, unnecessary confirmations, unclear hierarchy. Individually, these moments seem minor. Collectively, they define the experience.
-                    </p>
-
-                    <h2>Designing for clarity, not attention.</h2>
-                    <p>
-                        Designing for users means prioritizing clarity over expression. It means knowing when to remove instead of add. The most effective interfaces often feel obvious—not because they lack personality, but because nothing is fighting for attention.
-                    </p>
-                    <p>
-                        When design fades into the background, users move forward without friction. That is not the absence of design—it’s the result of good judgment.
+                        This allows me to approach Figma with clarity. Before a single pixel is placed,
+                        I already understand who the user is, what they struggle with, and where the product
+                        can fail if not designed carefully. AI becomes a thinking partner that challenges
+                        my perspective rather than blindly agreeing with it.
                     </p>
 
-                    <h2>Good design is considerate design.</h2>
+                    <h2>Precision Prompting: Treating AI Like a Senior Teammate</h2>
                     <p>
-                        The true cost of over-design isn’t visual noise. It’s the time, energy, and patience users spend navigating decisions they never asked to make.
+                        There is a clear difference between casual prompting and professional prompting.
+                        I never ask AI to “design a landing page.” I treat it the same way I would brief
+                        a senior designer or engineer.
                     </p>
                     <p>
-                        Design that respects users is calm, focused, and intentional. It doesn’t try to impress. It tries to help.
+                        A typical prompt might sound like:
+                    </p>
+                    <blockquote>
+                        “Act as a senior product designer with 10+ years of experience in SaaS. We are designing
+                        a modern B2B landing page with a soft but confident visual tone. Use a 12px border radius
+                        system, a neutral base palette, and #F26D40 as the primary accent. Typography should
+                        prioritize readability and hierarchy. The layout must be responsive, conversion-focused,
+                        and engineering-friendly.”
+                    </blockquote>
+                    <p>
+                        By defining constraints, intent, and context, I get outputs that align with real-world
+                        design systems—not generic UI concepts. This approach turns AI into a tactical tool
+                        rather than a random generator.
+                    </p>
+
+                    <h2>Designing Better Flows Through Systems Thinking</h2>
+                    <p>
+                        One of the most underrated ways AI helps me is in flow validation. I use AI to map empty states,
+                        loading and error states, permission and failure scenarios, and alternate paths users may take.
+                    </p>
+                    <p>
+                        These are often the details that get missed during early design phases but cause real UX friction
+                        in production. By having AI actively look for “what’s missing,” I can design more resilient,
+                        production-ready experiences—especially important when working closely with engineers or building myself.
+                    </p>
+
+                    <h2>Tooling: How AI Fits Into My Design Stack</h2>
+                    <p>
+                        AI isn’t a single tool—it’s an ecosystem:
+                    </p>
+                    <ul>
+                        <li><strong>ChatGPT & Claude</strong> – Research synthesis, flow analysis, system thinking, prompt iteration</li>
+                        <li><strong>Figma Make</strong> – Rapid ideation, layout exploration, and component variations</li>
+                        <li><strong>Antigravity & Claude</strong> – Translating design intent into clean, structured frontend logic</li>
+                        <li><strong>Gemini</strong> – Illustration support, visual ideation, and image generation when custom assets are needed</li>
+                        <li><strong>Cursor / VS Code Copilot</strong> – Bridging design and code efficiently, especially when prototyping or building real features</li>
+                    </ul>
+
+                    <h2>AI Amplifies Judgment — It Doesn’t Replace It</h2>
+                    <p>
+                        AI doesn’t make design decisions for me. It doesn’t understand users the way humans do.
+                        What it does is remove friction—so I can think more clearly, test ideas faster,
+                        and focus on what truly matters.
+                    </p>
+                    <p>
+                        As a design engineer, my value lies in judgment, empathy, systems thinking, and technical awareness.
+                        AI simply supports those strengths. The result is better work, delivered faster, with more
+                        intention and fewer blind spots.
                     </p>
                 </div>
             );
         }
 
-        // Default: Web Design Career
-        return (
-            <div className="article-body">
-                <p>
-                    As the Internet continues to develop and grow exponentially, jobs related to
-                    the industry do too, particularly those that relate to web design and development.
-                    The prediction is that by 2023, the job outlook for these two fields will grow
-                    by 8%—significantly faster than average. Whether you’re seeking salaried employment
-                    or aiming to work in a freelance capacity, a career in web design can offer a variety
-                    of employment arrangements, competitive salaries, and opportunities to utilize both
-                    technical and creative skill sets.
-                </p>
-
-                <h2>What does a career in web design involve?</h2>
-                <p>
-                    A career in website design can involve the design, creation, and coding of a
-                    range of website types. Other tasks will typically include liaising with clients
-                    and discussing website specifications, incorporating feedback, working on graphic
-                    design and image editing, and enabling multimedia features such as audio and video.
-                    Requiring a range of creative and technical skills, web designers may be involved
-                    in work across a range of industries, including software companies, IT consultancies,
-                    web design companies, corporate organizations, and more.
-                </p>
-                <p>
-                    In contrast with web developers, web designers tend to play a more creative role,
-                    crafting the overall vision and design of a site, and determining how to best
-                    incorporate the necessary functionality. However, there can be significant overlap
-                    between the roles.
-                </p>
-
-                <h2>Full-stack, back-end, and front-end web development</h2>
-                <p>
-                    The U.S. Bureau of Labor Statistics (BLS) Occupational Outlook Handbook tends to group
-                    web developers and digital designers into one category. However, they define them
-                    separately, stating that web developers create and maintain websites and are
-                    responsible for the technical aspects, including performance and capacity. Web or
-                    digital designers, on the other hand, are responsible for the look and functionality
-                    of websites and interfaces. They develop, create, and test the layout, functions,
-                    and navigation for usability.
-                </p>
-                <p>
-                    Web developers can focus on the back-end, front-end, or full-stack development, and
-                    typically utilize a range of programming languages, libraries, and frameworks to do so.
-                    Web designers may work more closely with front-end engineers to establish the
-                    user-end functionality and appearance of a site.
-                </p>
-
-                <h2>Are web designers in demand?</h2>
-                <p>
-                    In our ever-increasingly digital environment, there is a constant need for websites—and
-                    therefore for web designers and developers. With 1.74 billion websites in existence
-                    as of January 2020, the demand for web developers is only expected to rise.
-                    Web designers with significant coding experience are typically in higher demand
-                    and can usually expect a higher salary. Like all jobs, there are likely to be a
-                    range of opportunities, some of which are better paid than others.
-                </p>
-            </div>
-        );
     };
 
     return (
