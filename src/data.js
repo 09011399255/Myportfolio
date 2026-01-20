@@ -10,7 +10,8 @@ export const projects = [
 export const experience = [
   { company: 'Usercando', role: 'Product Designer / Operations Analyst', period: 'Aug 2025 - Jan 2026', desc: 'Collaborated with the product team to build scalable web applications.' },
   { company: 'Inspire-Edge', role: 'UI/UX Designer', period: 'Jan 2025 - May 2025', desc: 'Designed user-centric interfaces for mobile and web apps.', link: 'https://www.inspirecraftglobal.com/' },
-  { company: 'Speak AI', role: 'Frontend Engineering Intern', period: 'Jan 2021 - May 2021', desc: 'Assisted in developing responsive websites for local businesses.', link: 'https://prompting-ai-gamma.vercel.app/' },
+  { company: 'University of Ibadan (ITCC)', role: 'Lead Product Designer', period: 'Jan 2024 - Dec 2024', desc: 'Led the design team in building a digital portal to manage Industrial Training operations. Streamlined workflows for over 20,000 students and staff, transitioning manual processes into a scalable digital system.', link: 'https://itcc-ims-app.onrender.com/ims/' },
+  { company: 'Speak AI', role: 'Design Engineer', period: 'Jan 2021 - May 2021', desc: 'Designed and built responsive web interfaces and digital products.', link: 'https://prompting-ai-gamma.vercel.app/' },
 ];
 
 export const tools = [
