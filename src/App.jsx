@@ -11,6 +11,7 @@ import ArticleDetail from './components/ArticleDetail';
 import InDev from './components/InDev';
 import ScrollReveal from './components/ScrollReveal';
 import { AnimatePresence, motion } from 'framer-motion';
+import { articles, projects as projectsData } from './data';
 
 
 function App() {
@@ -22,6 +23,64 @@ function App() {
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activeSection, selectedArticle]);
+
+  // Deep Linking / Routing Logic
+  React.useEffect(() => {
+    const handleLocationChange = () => {
+      const hash = window.location.hash.replace('#/', '');
+
+      if (!hash || hash === '') {
+        setActiveSection('home');
+        setSelectedArticle(null);
+        setSelectedProject(null);
+      } else if (hash.startsWith('article/')) {
+        const slug = hash.replace('article/', '');
+        const article = articles.find(a => a.slug === slug);
+        if (article) {
+          setSelectedArticle(article);
+          setActiveSection('article-detail');
+        } else {
+          setActiveSection('home');
+        }
+      } else if (hash.startsWith('project/')) {
+        const projectName = hash.replace('project/', '');
+        const project = projectsData.find(p => p.name.toLowerCase().replace(/\s+/g, '-') === projectName);
+        if (project) {
+          setSelectedProject(project);
+          setActiveSection('project-dev');
+        } else {
+          setActiveSection('home');
+        }
+      } else {
+        setActiveSection(hash);
+      }
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    handleLocationChange(); // Handle initial load
+
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
+
+  // Update URL hash when state changes
+  React.useEffect(() => {
+    let hash = '';
+    if (activeSection === 'home') {
+      hash = '';
+    } else if (activeSection === 'article-detail' && selectedArticle) {
+      hash = `article/${selectedArticle.slug}`;
+    } else if (activeSection === 'project-dev' && selectedProject) {
+      const projectName = selectedProject.name.toLowerCase().replace(/\s+/g, '-');
+      hash = `project/${projectName}`;
+    } else {
+      hash = activeSection;
+    }
+
+    const currentHash = window.location.hash.replace('#/', '');
+    if (currentHash !== hash) {
+      window.history.pushState(null, '', hash ? `#/` + hash : window.location.pathname + window.location.search);
+    }
+  }, [activeSection, selectedArticle, selectedProject]);
 
   const handleArticleClick = (article) => {
     setSelectedArticle(article);
