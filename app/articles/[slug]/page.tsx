@@ -28,7 +28,7 @@ export async function generateMetadata({
 }) {
     try {
         const { slug } = await params;
-        const article =  await getArticleBySlug(slug);
+        const article = await getArticleBySlug(slug);
 
         return {
             title: `${article.title} | Portfolio`,
@@ -69,8 +69,8 @@ export default async function ArticlePage({ params }: PageProps) {
 
     let article;
     try {
-        article = await  getArticleBySlug(slug);
-    } catch  {
+        article = await getArticleBySlug(slug);
+    } catch {
         notFound();
     }
 
@@ -78,7 +78,7 @@ export default async function ArticlePage({ params }: PageProps) {
 
     const htmlContent = await markdownToHtml(article.content);
 
-  
+
     return (
         <div className="app-root">
             {/* <Header activeSection="articles" setActiveSection={() => { }} /> */}
@@ -86,7 +86,7 @@ export default async function ArticlePage({ params }: PageProps) {
             <div className="app-layout">
                 <div className="container">
                     <div className="main-layout-wrapper">
-                        <aside className="sidebar-v3">
+                        <aside className="sidebar-v3 sidebar-mobile-hidden">
                             <Hero sidebarOnly={true} />
                         </aside>
 

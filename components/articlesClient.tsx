@@ -119,7 +119,7 @@ const ArticlesClient = () => {
             <div className="app-layout">
                 <div className="container">
                     <div className="main-layout-wrapper">
-                        <aside className="sidebar-v3">
+                        <aside className="sidebar-v3 sidebar-mobile-hidden">
                             <Hero sidebarOnly={true} />
                         </aside>
 
