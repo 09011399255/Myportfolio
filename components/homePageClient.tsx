@@ -263,22 +263,12 @@ const HomePageClient = ({ recentBlogs }: {
             return (
                 <>
                     <ScrollReveal><Hero contentOnly={true} /></ScrollReveal>
-                    <div id="projects">
-                        <ScrollReveal delay={0.1}><Projects onProjectClick={handleProjectClick} /></ScrollReveal>
-                    </div>
-                    <div id="experience">
-                        <ScrollReveal delay={0.1}><Experience /></ScrollReveal>
-                        <ScrollReveal delay={0.1}><Toolbox /></ScrollReveal>
-                    </div>
-                    <div id="articles">
-                        <ScrollReveal delay={0.1}><TechLens recentBlogs={recentBlogs} /></ScrollReveal>
-                    </div>
-                    <div id="beyond">
-                        <ScrollReveal delay={0.1}><BeyondPortfolio /></ScrollReveal>
-                    </div>
-                    <div id="contact">
-                        <ScrollReveal delay={0.1}><Contact /></ScrollReveal>
-                    </div>
+                    <ScrollReveal delay={0.1}><Projects onProjectClick={handleProjectClick} /></ScrollReveal>
+                    <ScrollReveal delay={0.1}><Experience /></ScrollReveal>
+                    <ScrollReveal delay={0.1}><Toolbox /></ScrollReveal>
+                    <ScrollReveal delay={0.1}><TechLens recentBlogs={recentBlogs} /></ScrollReveal>
+                    <ScrollReveal delay={0.1}><BeyondPortfolio /></ScrollReveal>
+                    <ScrollReveal delay={0.1}><Contact /></ScrollReveal>
                 </>
             );
         }
