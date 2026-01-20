@@ -27,7 +27,8 @@ function App() {
   // Deep Linking / Routing Logic
   React.useEffect(() => {
     const handleLocationChange = () => {
-      const hash = window.location.hash.replace('#/', '');
+      // Remove both # and #/ if they exist
+      const hash = window.location.hash.replace(/^#\/?/, '');
 
       if (!hash || hash === '') {
         setActiveSection('home');
@@ -41,6 +42,7 @@ function App() {
           setActiveSection('article-detail');
         } else {
           setActiveSection('home');
+          window.location.hash = '';
         }
       } else if (hash.startsWith('project/')) {
         const projectName = hash.replace('project/', '');
@@ -50,35 +52,35 @@ function App() {
           setActiveSection('project-dev');
         } else {
           setActiveSection('home');
+          window.location.hash = '';
         }
       } else {
         setActiveSection(hash);
       }
     };
 
-    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
     handleLocationChange(); // Handle initial load
 
-    return () => window.removeEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('hashchange', handleLocationChange);
   }, []);
 
-  // Update URL hash when state changes
+  // Sync state back to hash when triggered by internal actions (like clicking a project/article)
   React.useEffect(() => {
-    let hash = '';
+    let targetHash = '';
     if (activeSection === 'home') {
-      hash = '';
+      targetHash = '';
     } else if (activeSection === 'article-detail' && selectedArticle) {
-      hash = `article/${selectedArticle.slug}`;
+      targetHash = `#/article/${selectedArticle.slug}`;
     } else if (activeSection === 'project-dev' && selectedProject) {
       const projectName = selectedProject.name.toLowerCase().replace(/\s+/g, '-');
-      hash = `project/${projectName}`;
+      targetHash = `#/project/${projectName}`;
     } else {
-      hash = activeSection;
+      targetHash = `#/${activeSection}`;
     }
 
-    const currentHash = window.location.hash.replace('#/', '');
-    if (currentHash !== hash) {
-      window.history.pushState(null, '', hash ? `#/` + hash : window.location.pathname + window.location.search);
+    if (window.location.hash !== targetHash && !(window.location.hash === '' && targetHash === '')) {
+      window.location.hash = targetHash;
     }
   }, [activeSection, selectedArticle, selectedProject]);
 
