@@ -1,0 +1,135 @@
+.articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.article-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.article-content-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.article-thumbnail-wrapper {
+    flex-shrink: 0;
+    width: 180px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #111;
+    border: 1px solid #222;
+}
+
+.article-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+
+@media (hover: hover) {
+    .article-item:hover .article-thumbnail {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+}
+
+.article-text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.article-item.clickable {
+    cursor: pointer;
+}
+
+.article-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.article-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    max-width: 80%;
+    line-height: 1.2;
+}
+
+.article-arrow {
+    color: var(--accent-orange);
+    transition: transform 0.3s;
+}
+
+@media (hover: hover) {
+    .article-item:hover .article-arrow {
+        transform: translate(5px, -5px);
+    }
+}
+
+.article-desc {
+    color: #888;
+    font-size: 1rem;
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.article-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.article-date,
+.article-readtime {
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .article-content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .article-thumbnail-wrapper {
+        width: 100%;
+        height: 200px;
+    }
+
+    .article-title {
+        font-size: 1.4rem;
+        max-width: 100%;
+    }
+
+    .article-desc {
+        font-size: 0.9rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .articles-list {
+        gap: 40px;
+    }
+
+    .article-arrow {
+        display: none;
+    }
+}
