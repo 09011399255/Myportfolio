@@ -13,6 +13,12 @@ const Header = ({ activeSection, setActiveSection }) => {
 
     return (
         <nav className="header-nav">
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                omo ope jeun lo is a line by asake
+
+                <span>hello my baby sho wa</span>
+            </div>
             <div className="nav-pill">
                 {navItems.map((item) => {
                     const Icon = item.icon;
