@@ -1,0 +1,237 @@
+/* Article Detail Container */
+.article-detail-container {
+    padding-bottom: 60px;
+}
+
+/* Back Button */
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+    padding: 0;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+@media (hover: hover) {
+    .back-btn:hover {
+        color: #fff;
+    }
+}
+
+/* Hero Image */
+.article-hero-img-wrapper {
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    background: #1a1a1a;
+    position: relative;
+}
+
+.article-hero-img {
+    object-fit: cover;
+}
+
+.article-hero-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #444;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* Meta Information */
+.article-meta-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+.article-date,
+.article-readtime {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Main Title */
+.article-main-title {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 60px;
+    color: #fff;
+    text-transform: none;
+}
+
+/* Rendered Markdown Content */
+.rendered-content {
+    max-width: 800px;
+}
+
+.rendered-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #888;
+    margin-bottom: 30px;
+}
+
+.rendered-content h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 60px 0 30px 0;
+    line-height: 1.2;
+}
+
+.rendered-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 50px 0 25px 0;
+    line-height: 1.3;
+}
+
+.rendered-content h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    margin: 40px 0 20px 0;
+    line-height: 1.4;
+}
+
+.rendered-content ul,
+.rendered-content ol {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #888;
+    margin-bottom: 30px;
+    padding-left: 30px;
+}
+
+.rendered-content ul li,
+.rendered-content ol li {
+    margin-bottom: 15px;
+}
+
+.rendered-content strong {
+    color: #fff;
+    font-weight: 700;
+}
+
+.rendered-content em {
+    color: #aaa;
+    font-style: italic;
+}
+
+.rendered-content blockquote {
+    border-left: 4px solid #444;
+    padding-left: 20px;
+    margin: 30px 0;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #aaa;
+    font-style: italic;
+}
+
+.rendered-content code {
+    background: #1a1a1a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    color: #f26d40;
+}
+
+.rendered-content pre {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 30px;
+}
+
+.rendered-content pre code {
+    background: none;
+    padding: 0;
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+.rendered-content a {
+    color: #f26d40;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+@media (hover: hover) {
+    .rendered-content a:hover {
+        color: #ff8c61;
+        text-decoration: underline;
+    }
+}
+
+.rendered-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 40px 0;
+}
+
+.rendered-content hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 60px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .article-main-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .article-hero-img-wrapper {
+        height: 250px;
+    }
+
+    .rendered-content h2 {
+        font-size: 1.5rem;
+        margin: 40px 0 20px 0;
+    }
+
+    .rendered-content h3 {
+        font-size: 1.25rem;
+        margin: 35px 0 15px 0;
+    }
+
+    .rendered-content h4 {
+        font-size: 1.1rem;
+        margin: 30px 0 15px 0;
+    }
+
+    .rendered-content p,
+    .rendered-content ul,
+    .rendered-content ol {
+        font-size: 1rem;
+    }
+
+    .article-meta-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
