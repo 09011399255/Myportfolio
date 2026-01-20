@@ -92,8 +92,10 @@
     transition: transform 0.2s;
 }
 
-.social-links-v2 a:hover {
-    transform: scale(1.2);
+@media (hover: hover) {
+    .social-links-v2 a:hover {
+        transform: scale(1.2);
+    }
 }
 
 /* Content Side Styling */
@@ -168,18 +170,20 @@
     cursor: pointer;
 }
 
-.cta-card-v2.clickable:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+@media (hover: hover) {
+    .cta-card-v2.clickable:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
 
-.cta-card-v2.clickable:hover .cta-arrow-btn {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
-}
+    .cta-card-v2.clickable:hover .cta-arrow-btn {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateX(5px);
+    }
 
-.cta-card-v2.clickable:hover .cta-arrow-btn.dark {
-    background: rgba(0, 0, 0, 0.05);
+    .cta-card-v2.clickable:hover .cta-arrow-btn.dark {
+        background: rgba(0, 0, 0, 0.05);
+    }
 }
 
 .orange-card {

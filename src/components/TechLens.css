@@ -35,9 +35,11 @@
     transition: all 0.5s ease;
 }
 
-.article-item:hover .article-thumbnail {
-    opacity: 1;
-    transform: scale(1.1);
+@media (hover: hover) {
+    .article-item:hover .article-thumbnail {
+        opacity: 1;
+        transform: scale(1.1);
+    }
 }
 
 .article-text-content {
@@ -70,8 +72,10 @@
     transition: transform 0.3s;
 }
 
-.article-item:hover .article-arrow {
-    transform: translate(5px, -5px);
+@media (hover: hover) {
+    .article-item:hover .article-arrow {
+        transform: translate(5px, -5px);
+    }
 }
 
 .article-desc {

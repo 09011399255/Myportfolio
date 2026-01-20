@@ -67,18 +67,20 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.quick-contact-card:hover {
-    border-color: #444;
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.05);
-}
+@media (hover: hover) {
+    .quick-contact-card:hover {
+        border-color: #444;
+        transform: translateY(-2px);
+        background: rgba(255, 255, 255, 0.05);
+    }
 
-.quick-contact-card.whatsapp:hover {
-    border-color: #25D366;
-}
+    .quick-contact-card.whatsapp:hover {
+        border-color: #25D366;
+    }
 
-.quick-contact-card.email:hover {
-    border-color: var(--accent-orange);
+    .quick-contact-card.email:hover {
+        border-color: var(--accent-orange);
+    }
 }
 
 .quick-icon-wrapper {
@@ -93,14 +95,16 @@
     transition: all 0.3s;
 }
 
-.whatsapp:hover .quick-icon-wrapper {
-    background: rgba(37, 211, 102, 0.1);
-    color: #25D366;
-}
+@media (hover: hover) {
+    .whatsapp:hover .quick-icon-wrapper {
+        background: rgba(37, 211, 102, 0.1);
+        color: #25D366;
+    }
 
-.email:hover .quick-icon-wrapper {
-    background: rgba(255, 115, 0, 0.1);
-    color: var(--accent-orange);
+    .email:hover .quick-icon-wrapper {
+        background: rgba(255, 115, 0, 0.1);
+        color: var(--accent-orange);
+    }
 }
 
 .quick-info {
@@ -206,10 +210,12 @@ textarea.input-field {
     cursor: not-allowed;
 }
 
-.submit-btn:hover:not(:disabled) {
-    background: white;
-    color: #000;
-    transform: translateY(-2px);
+@media (hover: hover) {
+    .submit-btn:hover:not(:disabled) {
+        background: white;
+        color: #000;
+        transform: translateY(-2px);
+    }
 }
 
 .success-message {
@@ -275,9 +281,11 @@ textarea.input-field {
     margin-top: 10px;
 }
 
-.reset-btn:hover {
-    border-color: #666;
-    color: white;
+@media (hover: hover) {
+    .reset-btn:hover {
+        border-color: #666;
+        color: white;
+    }
 }
 
 .error-text {

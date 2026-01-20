@@ -20,10 +20,12 @@
     cursor: pointer;
 }
 
-.experience-item:hover {
-    background-color: rgba(255, 255, 255, 0.02);
-    padding-left: 10px;
-    border-bottom-color: #333;
+@media (hover: hover) {
+    .experience-item:hover {
+        background-color: rgba(255, 255, 255, 0.02);
+        padding-left: 10px;
+        border-bottom-color: #333;
+    }
 }
 
 .exp-main {
@@ -84,9 +86,11 @@
     transition: all 0.3s ease;
 }
 
-.experience-item:hover::after {
-    opacity: 1;
-    right: 15px;
+@media (hover: hover) {
+    .experience-item:hover::after {
+        opacity: 1;
+        right: 15px;
+    }
 }
 
 @media (max-width: 992px) {

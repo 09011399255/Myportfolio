@@ -33,9 +33,11 @@
     padding: 0;
 }
 
-.nav-item-btn:hover {
-    color: #fff;
-    transform: scale(1.1);
+@media (hover: hover) {
+    .nav-item-btn:hover {
+        color: #fff;
+        transform: scale(1.1);
+    }
 }
 
 .nav-item-btn.active {

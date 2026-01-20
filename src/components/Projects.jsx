@@ -58,7 +58,6 @@ const Projects = ({ onProjectClick }) => {
                                     className="project-thumb-v2"
                                     style={{
                                         background: img ? 'none' : `linear-gradient(45deg, ${project.color}40, ${project.color}10)`,
-                                        borderRadius: '16px',
                                         backgroundColor: '#222'
                                     }}
                                 >

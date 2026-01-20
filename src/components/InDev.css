@@ -164,8 +164,10 @@
     font-weight: 600;
 }
 
-.contact-link:hover {
-    text-decoration: underline;
+@media (hover: hover) {
+    .contact-link:hover {
+        text-decoration: underline;
+    }
 }
 
 @keyframes blink {

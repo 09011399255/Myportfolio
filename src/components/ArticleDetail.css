@@ -16,8 +16,10 @@
     transition: color 0.3s;
 }
 
-.back-btn:hover {
-    color: #fff;
+@media (hover: hover) {
+    .back-btn:hover {
+        color: #fff;
+    }
 }
 
 .article-hero-img-wrapper {
