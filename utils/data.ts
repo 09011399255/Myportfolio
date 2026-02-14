@@ -1,12 +1,10 @@
+import honeydropImg from '../assets/images/Honeydrop.png';
 import agrohiveImg from '../assets/images/Agrohive.png';
 import sportaImg from '../assets/images/Sporta.png';
 import fliqueImg from '../assets/images/Flique.png';
 import solaraImg from '../assets/images/Solara.png';
 import conovaImg from '../assets/images/Conova.png';
-import bethanImg from '../assets/images/Bethan.png';
-import markImg from '../assets/images/Mark.png';
 import yusuffImg from '../assets/images/yusuff.png';
-import honeydropImg from '../assets/images/Honeydrop.png';
 
 export interface ProjectSection {
   title: string;
@@ -60,15 +58,37 @@ export const projects: Project[] = [
   {
     id: 'honeydrop',
     name: 'Honey Drop',
-    desc: 'Top-tier fashion & lifestyle brand.',
-    type: 'E-commerce',
-    color: '#FFB800',
+    desc: 'A modern African luxury brand for jewelry, fashion, and fragrance.',
+    type: 'E-commerce Platform',
+    color: '#B08D57',
+    link: 'https://honey-drop.vercel.app/',
+    longDesc: 'Honey Drop is a premium e-commerce platform dedicated to modern African luxury. It showcases timeless pieces across jewelry, fashion, and fragrance, designed to endure and inspire. The platform focuses on a seamless shopping experience with a rich, cultural aesthetic.',
+    duration: '2 Months',
+    role: 'Lead Designer & Developer',
+    tools: ['Figma', 'Tailwind', 'React', 'ChatGPT', 'Gemini', 'ImageFX', 'Claude Sonnet'],
+    responsibilities: [
+      'Developed a high-performance e-commerce frontend using React and Vite.',
+      'Implemented sophisticated animations and transitions with Framer Motion.',
+      'Designed a luxury-focused visual identity and user interface.',
+      'Optimized the platform for mobile responsiveness and performance.'
+    ],
     live: 'https://honey-drop.vercel.app/',
     images: [honeydropImg],
-    summary: 'A premium e-commerce experience for the modern fashion enthusiast.',
-    longDesc: 'Honey Drop is a high-end fashion and lifestyle brand. This project involved creating a seamless shopping experience for their new collection, focusing on visual elegance and user-centric design.',
-    role: 'Lead Designer',
-    tools: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
+    summary: 'A curated digital experience for modern African luxury, blending traditional craftsmanship with contemporary design.',
+    metrics: [
+      { label: 'User Engagement', value: '45%' },
+      { label: 'Mobile Traffic', value: '70%' },
+      { label: 'Load Time', value: '< 2s' }
+    ],
+    caseStudy: [
+      {
+        caption: 'THE VISION',
+        title: 'Modern African Luxury',
+        description: 'The goal was to create a digital home for Honey Drop that reflects the brand\'s commitment to quality and heritage. We focused on a minimal yet rich aesthetic that lets the products take center stage.',
+        image: honeydropImg,
+        layout: 'full-width'
+      }
+    ]
   },
   {
     id: 'agrohive',
@@ -80,7 +100,7 @@ export const projects: Project[] = [
     longDesc: 'Farmers across Nigeria face significant challenges in achieving sustainable and profitable farming. Access to modern farming tools remains a hurdle due to high costs and limited availability. Agrohive was built to bridge this gap by providing a trusted marketplace and a community platform for knowledge sharing.',
     duration: '3 Months',
     role: 'Lead Project Designer',
-    tools: ['Figma', 'Framer', 'React', 'Tailwind CSS', 'Next.js', 'PostgreSQL'],
+    tools: ['Figma', 'Other design tools', 'ChatGPT', 'Gemini', 'ImageFX', 'Claude Sonnet'],
     responsibilities: [
       'Converted Sketch Designs into a functional web application.',
       'Connected the frontend to the necessary backend API endpoints.',
@@ -88,8 +108,7 @@ export const projects: Project[] = [
       'Implemented real-time data visualization for crop analytics.'
     ],
     behance: 'https://www.behance.net/gallery/222281357/Agrohive-(-An-Agro-tech-Industry)-Case-study',
-    live: 'https://agrohive.com',
-    images: [agrohiveImg, sportaImg, fliqueImg],
+    images: [agrohiveImg],
     summary: 'Bridging the gap between traditional farming and modern technology through a unified marketplace and community hub.',
     metrics: [
       { label: 'Struggle for Tools', value: '85%' },
@@ -159,7 +178,7 @@ export const projects: Project[] = [
     longDesc: 'Conova is a workspace booking and management application designed for modern coworking spaces. It allows users to browse available desks, book meeting rooms, and manage their membership all in one place.',
     duration: '4 Months',
     role: 'UI/UX Designer',
-    tools: ['Figma', 'React Native', 'Firebase', 'Redux'],
+    tools: ['Figma', 'React Native', 'Firebase', 'Redux', 'ChatGPT', 'Gemini', 'ImageFX', 'Claude Sonnet'],
     responsibilities: [
       'Designed end-to-end user flows for room booking.',
       'Created a comprehensive design system for the mobile app.',
@@ -174,15 +193,17 @@ export const projects: Project[] = [
     type: 'Framer Template',
     color: '#2196F3',
     link: 'https://www.behance.net/gallery/232735471/Crypto-Blockchain-App-design(-Decentralised)',
-    longDesc: 'Flique is a fast, secure, and intuitive crypto exchange application built to simplify the trading experience for beginners and pros alike.',
+    longDesc: 'Flique is a fast, secure, and intuitive crypto exchange application built to simplify the trading experience for beginners and pros alike. It focuses on clarity, security, and high performance.',
     duration: '2 Months',
     role: 'Lead Designer',
-    tools: ['Figma', 'Webflow', 'Spline', 'GSAP'],
+    tools: ['Figma', 'Other design tools', 'ChatGPT', 'Gemini', 'ImageFX', 'Claude Sonnet'],
     responsibilities: [
-      'Developed complex 3D interactions using Spline.',
+      'Developed complex 3D interactions using Spline to visualize blockchain data.',
       'Managed branding and visual identity for the product launch.',
-      'Built a high-fidelity prototype for investor pitches.'
+      'Built a high-fidelity prototype for investor pitches and technical demos.',
+      'Optimized the landing page for high conversion and low latency.'
     ],
+    behance: 'https://www.behance.net/gallery/232735471/Crypto-Blockchain-App-design(-Decentralised)',
     images: [fliqueImg]
   },
   {
@@ -192,15 +213,17 @@ export const projects: Project[] = [
     type: 'SaaS Platform',
     color: '#38BDF8',
     link: 'https://www.getsolara.tech/',
-    longDesc: 'Solara provides a unified case management and marketplace platform specifically tailored for modern funeral homes, streamlining administrative tasks and enhancing the experience for grieving families.',
+    longDesc: 'Solara provides a unified case management and marketplace platform specifically tailored for modern funeral homes, streamlining administrative tasks and enhancing the experience for grieving families during difficult times.',
     duration: '6 Months',
     role: 'Product Designer',
-    tools: ['Figma', 'Next.js', 'TypeScript', 'Prisma'],
+    tools: ['Figma', 'Other technical tools', 'ChatGPT', 'Gemini', 'ImageFX', 'Claude Sonnet'],
     responsibilities: [
       'Architected the marketplace bridging funeral providers and families.',
-      'Implemented complex form systems for case management.',
-      'Led the transition from a legacy software to a modern web app.'
+      'Implemented complex form systems for case management and data entry.',
+      'Led the transition from a legacy software to a modern, accessible web app.',
+      'Focused on empathetic design to support users during sensitive processes.'
     ],
+    live: 'https://www.getsolara.tech/',
     images: [solaraImg]
   },
   {
@@ -210,17 +233,19 @@ export const projects: Project[] = [
     type: 'Framer Template',
     color: '#FF5722',
     link: 'https://www.behance.net/gallery/220454041/Sporta-AI',
-    longDesc: 'Sporta AI utilizes advanced machine learning to optimize athlete performance, providing personalized training plans and predictive injury analysis.',
+    longDesc: 'Sporta AI utilizes advanced machine learning to optimize athlete performance, providing personalized training plans and predictive injury analysis for professional teams.',
     duration: '3 Months',
     role: 'Product Designer',
-    tools: ['Figma', 'React', 'D3.js', 'Python'],
+    tools: ['Figma', 'Photoshop', 'Other design tools', 'ChatGPT', 'Gemini', 'ImageFX', 'Claude Sonnet'],
     responsibilities: [
-      'Visualized complex athletic performance metrics using D3.js.',
-      'Designed the AI-driven dashboard for coaches.',
-      'Created a seamless onboarding flow for professional athletes.'
+      'Visualized complex athletic performance metrics using D3.js and custom charts.',
+      'Designed the AI-driven dashboard for coaches to track player progress.',
+      'Created a seamless onboarding flow for professional athletes and teams.',
+      'Conducted research on sports science to inform feature development.'
     ],
+    behance: 'https://www.behance.net/gallery/220454041/Sporta-AI',
     images: [sportaImg]
-  },
+  }
 ];
 
 export const socials = {

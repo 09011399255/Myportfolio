@@ -28,330 +28,224 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         }
     }, [project.images]);
 
-    const hasNarrative = !!project.caseStudy;
 
     return (
-        <div className={`project-page ${hasNarrative ? 'narrative-style' : ''}`}>
-            <header className="project-page-header">
+        <div className={`project-page`}>
+            <header className="project-page-header" style={{ padding: '60px 0 20px' }}>
                 <div className="container">
-                    <div className="header-inner">
-                        <Link href="/" className="back-button">
+                    <div className="project-header-top" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', width: '100%' }}>
+                        <Link href="/" className="back-button-circle" style={{
+                            width: '44px',
+                            height: '44px',
+                            borderRadius: '50%',
+                            border: '1px solid rgba(255,255,255,0.2)',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            color: '#fff',
+                            transition: 'all 0.3s ease'
+                        }}>
                             <ArrowLeft size={20} />
                         </Link>
-                        {!hasNarrative && <h1 className="project-page-title">{project.name}</h1>}
-                        <div className="header-actions">
-                            {project.live && (
-                                <a href={project.live} target="_blank" rel="noopener noreferrer" className="header-btn">
-                                    LIVE SITE
-                                </a>
-                            )}
-                        </div>
+
+                        <h1 className="project-top-title" style={{
+                            fontSize: '2.5rem',
+                            fontWeight: 900,
+                            textTransform: 'uppercase',
+                            letterSpacing: '4px',
+                            margin: 0,
+                            color: '#fff'
+                        }}>
+                            {project.name}
+                        </h1>
+                        <div style={{ width: '44px' }}></div>
                     </div>
                 </div>
             </header>
 
             <main className="project-page-main">
-                {hasNarrative ? (
-                    <>
-                        {/* Narrative Hero */}
-                        <section className="narrative-hero">
-                            <div className="container">
-                                <div className="hero-grid">
-                                    <div className="hero-main">
-                                        <h1 className="hero-title">{project.name}</h1>
-                                        <h2 className="hero-subtitle">{project.summary || project.desc}</h2>
-                                    </div>
-                                    <div className="hero-details">
-                                        <div className="detail-item">
-                                            <span className="detail-label">Overview</span>
-                                            <p className="detail-text">{project.longDesc}</p>
-                                        </div>
-                                        <div className="detail-row">
-                                            <div className="detail-item">
-                                                <span className="detail-label">Role</span>
-                                                <p className="detail-text">{project.role}</p>
-                                            </div>
-                                            <div className="detail-item">
-                                                <span className="detail-label">Duration</span>
-                                                <p className="detail-text">{project.duration}</p>
-                                            </div>
-                                        </div>
-                                        {project.metrics && (
-                                            <div className="hero-metrics">
-                                                {project.metrics.map((metric, idx) => (
-                                                    <div key={idx} className="metric-card">
-                                                        <span className="metric-value">{metric.value}</span>
-                                                        <span className="metric-label">{metric.label}</span>
-                                                    </div>
+                {/* Standard Project Preview (Conova Style) */}
+                <section className="project-visuals" style={{ marginTop: '40px' }}>
+                    <div className="container">
+                        <div className="carousel-wrapper" style={{
+                            background: '#0a0a0a',
+                            borderRadius: '16px',
+                            overflow: 'hidden',
+                            boxShadow: '0 50px 100px rgba(0,0,0,0.7)',
+                            border: '1px solid rgba(255,255,255,0.05)'
+                        }}>
+                            {project.images && project.images.length > 0 ? (
+                                <div className="project-carousel" style={{ height: '700px', position: 'relative' }}>
+                                    <motion.div
+                                        key={currentImageIndex}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        transition={{ duration: 0.6 }}
+                                        className="carousel-main-image"
+                                        style={{ height: '100%', width: '100%', position: 'relative' }}
+                                    >
+                                        <Image
+                                            src={project.images[currentImageIndex]}
+                                            alt={`${project.name} preview`}
+                                            fill
+                                            className="main-img"
+                                            priority
+                                            style={{ objectFit: 'contain', padding: '60px' }}
+                                        />
+                                    </motion.div>
+
+                                    {project.images.length > 1 && (
+                                        <>
+                                            <button className="carousel-nav prev" onClick={handlePrevImage} style={{ left: '30px', background: 'rgba(0,0,0,0.5)', borderRadius: '50%', width: '44px', height: '44px' }}>
+                                                <ChevronLeft size={24} />
+                                            </button>
+                                            <button className="carousel-nav next" onClick={handleNextImage} style={{ right: '30px', background: 'rgba(0,0,0,0.5)', borderRadius: '50%', width: '44px', height: '44px' }}>
+                                                <ChevronRight size={24} />
+                                            </button>
+                                            <div className="carousel-pagination" style={{ bottom: '30px' }}>
+                                                {project.images.map((_, idx) => (
+                                                    <span
+                                                        key={idx}
+                                                        className={`pagination-dot ${idx === currentImageIndex ? 'active' : ''}`}
+                                                        onClick={() => setCurrentImageIndex(idx)}
+                                                        style={{ width: '8px', height: '8px', margin: '0 6px', background: idx === currentImageIndex ? '#fff' : 'rgba(255,255,255,0.3)' }}
+                                                    />
                                                 ))}
                                             </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        {/* Personas Section */}
-                        {project.personas && (
-                            <section className="project-personas">
-                                <div className="container">
-                                    <span className="section-caption text-center">UNDERSTANDING THE USERS</span>
-                                    <h2 className="section-title text-center">User Personas</h2>
-                                    <div className="personas-grid">
-                                        {project.personas.map((persona, idx) => (
-                                            <div key={idx} className="persona-card dark-box">
-                                                <div className="persona-header">
-                                                    {persona.avatar && (
-                                                        <div className="persona-avatar">
-                                                            <Image
-                                                                src={persona.avatar}
-                                                                alt={persona.name}
-                                                                width={80}
-                                                                height={80}
-                                                                className="avatar-img"
-                                                            />
-                                                        </div>
-                                                    )}
-                                                    <div className="persona-meta">
-                                                        <h3 className="persona-name">{persona.name}</h3>
-                                                        <p className="persona-role">{persona.role}</p>
-                                                    </div>
-                                                </div>
-                                                <div className="persona-body">
-                                                    <p className="persona-desc">{persona.description}</p>
-                                                    <div className="persona-details-row">
-                                                        <div className="persona-detail-col">
-                                                            <h4 className="detail-title">Goals</h4>
-                                                            <ul className="detail-list">
-                                                                {persona.goals.map((goal, gIdx) => (
-                                                                    <li key={gIdx}>{goal}</li>
-                                                                ))}
-                                                            </ul>
-                                                        </div>
-                                                        <div className="persona-detail-col">
-                                                            <h4 className="detail-title">Pain Points</h4>
-                                                            <ul className="detail-list">
-                                                                {persona.painPoints.map((pain, pIdx) => (
-                                                                    <li key={pIdx}>{pain}</li>
-                                                                ))}
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </section>
-                        )}
-
-                        {/* Narrative Sections */}
-                        <section className="case-study-narrative">
-                            <div className="container">
-                                {project.caseStudy?.map((section, idx) => (
-                                    <div key={idx} className={`narrative-section ${section.layout || 'stacked'}`}>
-                                        <div className="section-media">
-                                            {section.image && (
-                                                <div className="media-container dark-box">
-                                                    <Image
-                                                        src={section.image}
-                                                        alt={section.title}
-                                                        className="section-img"
-                                                        style={{ width: '100%', height: 'auto' }}
-                                                    />
-                                                </div>
-                                            )}
-                                        </div>
-                                        <div className="section-content">
-                                            {section.caption && <span className="section-caption">{section.caption}</span>}
-                                            <h3 className="section-title">{section.title}</h3>
-                                            <p className="section-desc">{section.description}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </section>
-
-                        {/* Impact & Lessons */}
-                        {(project.impact || project.lessons) && (
-                            <section className="project-outcome">
-                                <div className="container">
-                                    <div className="outcome-grid">
-                                        {project.impact && (
-                                            <div className="outcome-section">
-                                                <h3 className="outcome-title">Impact</h3>
-                                                <ul className="outcome-list">
-                                                    {project.impact.map((item, idx) => (
-                                                        <li key={idx}>{item}</li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        )}
-                                        {project.lessons && (
-                                            <div className="outcome-section">
-                                                <h3 className="outcome-title">What I learned</h3>
-                                                <ul className="outcome-list">
-                                                    {project.lessons.map((item, idx) => (
-                                                        <li key={idx}>{item}</li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            </section>
-                        )}
-
-                        {/* Screens Section */}
-                        {project.screens && (
-                            <section className="project-screens">
-                                <div className="container">
-                                    <h3 className="section-title text-center">Screens</h3>
-                                    <div className="screens-grid">
-                                        {project.screens.map((screen, idx) => (
-                                            <div key={idx} className="screen-item">
-                                                <Image
-                                                    src={screen}
-                                                    alt={`${project.name} screen ${idx + 1}`}
-                                                    className="screen-img-full"
-                                                    style={{ width: '100%', height: 'auto' }}
-                                                />
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
-                            </section>
-                        )}
-                    </>
-                ) : (
-                    <>
-                        {/* Legacy Layout */}
-                        <section className="project-visuals">
-                            <div className="container">
-                                <div className="carousel-wrapper">
-                                    {project.images && project.images.length > 0 ? (
-                                        <div className="project-carousel">
-                                            <motion.div
-                                                key={currentImageIndex}
-                                                initial={{ opacity: 0 }}
-                                                animate={{ opacity: 1 }}
-                                                transition={{ duration: 0.5 }}
-                                                className="carousel-main-image"
-                                            >
-                                                <Image
-                                                    src={project.images[currentImageIndex]}
-                                                    alt={`${project.name} screenshot ${currentImageIndex + 1}`}
-                                                    fill
-                                                    className="main-img"
-                                                    priority
-                                                />
-                                            </motion.div>
-
-                                            {project.images.length > 1 && (
-                                                <>
-                                                    <button className="carousel-nav prev" onClick={handlePrevImage}>
-                                                        <ChevronLeft size={24} />
-                                                    </button>
-                                                    <button className="carousel-nav next" onClick={handleNextImage}>
-                                                        <ChevronRight size={24} />
-                                                    </button>
-                                                    <div className="carousel-pagination">
-                                                        {project.images.map((_, idx) => (
-                                                            <span
-                                                                key={idx}
-                                                                className={`pagination-dot ${idx === currentImageIndex ? 'active' : ''}`}
-                                                                onClick={() => setCurrentImageIndex(idx)}
-                                                            />
-                                                        ))}
-                                                    </div>
-                                                </>
-                                            )}
-                                        </div>
-                                    ) : (
-                                        <div className="project-placeholder" style={{ backgroundColor: `${project.color}20` }}>
-                                            <div className="placeholder-icon" style={{ backgroundColor: project.color }}>
-                                                {project.name[0]}
-                                            </div>
-                                        </div>
+                                        </>
                                     )}
                                 </div>
+                            ) : (
+                                <div className="project-placeholder" style={{ height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                                    <div className="placeholder-icon" style={{
+                                        width: '120px',
+                                        height: '120px',
+                                        borderRadius: '30px',
+                                        backgroundColor: project.color,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        fontSize: '3rem',
+                                        color: '#fff',
+                                        fontWeight: 800
+                                    }}>
+                                        {project.name[0]}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                    </div>
+                </section>
+
+                <section className="project-details-grid" style={{ paddingBottom: '120px', borderTop: '1px solid rgba(255,255,255,0.1)', marginTop: '80px', paddingTop: '80px' }}>
+                    <div className="container">
+                        <div className="details-layout" style={{
+                            display: 'grid',
+                            gridTemplateColumns: '1.8fr 1fr',
+                            gap: '120px'
+                        }}>
+                            {/* Left Column */}
+                            <div className="details-main-col">
+                                <div className="detail-block" style={{ marginBottom: '60px' }}>
+                                    <h3 className="detail-caption" style={{ color: '#555', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '2px', marginBottom: '25px' }}>ABOUT THIS PROJECT</h3>
+                                    <p className="detail-text" style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#888', fontWeight: 400 }}>
+                                        {project.longDesc || project.desc}
+                                    </p>
+                                </div>
+
+                                {project.role && (
+                                    <div className="detail-block" style={{ marginBottom: '60px' }}>
+                                        <h3 className="detail-caption" style={{ color: '#555', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '2px', marginBottom: '25px' }}>ROLE IN PROJECT</h3>
+                                        <p className="detail-text" style={{ fontSize: '1.2rem', color: '#fff', fontWeight: 600 }}>
+                                            {project.role}
+                                        </p>
+                                    </div>
+                                )}
+
+                                {project.responsibilities && project.responsibilities.length > 0 && (
+                                    <div className="detail-block">
+                                        <h3 className="detail-caption" style={{ color: '#555', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '2px', marginBottom: '25px' }}>MY RESPONSIBILITIES & FEATURES I IMPLEMENTED</h3>
+                                        <ul className="responsibility-list" style={{ listStyle: 'none', padding: 0 }}>
+                                            {project.responsibilities.map((item, idx) => (
+                                                <li key={idx} style={{
+                                                    position: 'relative',
+                                                    paddingLeft: '25px',
+                                                    marginBottom: '18px',
+                                                    color: '#888',
+                                                    fontSize: '1.1rem',
+                                                    lineHeight: '1.6'
+                                                }}>
+                                                    <span style={{ position: 'absolute', left: 0, color: '#fff', fontWeight: 900 }}>•</span>
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
                             </div>
-                        </section>
 
-                        <section className="project-info">
-                            <div className="container">
-                                <div className="info-grid">
-                                    <div className="info-main">
-                                        <div className="info-section">
-                                            <h2 className="section-label">ABOUT THIS PROJECT</h2>
-                                            <div className="section-content">
-                                                <p>{project.longDesc || project.desc}</p>
-                                            </div>
-                                        </div>
-
-                                        {project.role && (
-                                            <div className="info-section">
-                                                <h2 className="section-label">ROLE IN PROJECT</h2>
-                                                <div className="section-content">
-                                                    <p>{project.role}</p>
-                                                </div>
-                                            </div>
-                                        )}
-
-                                        {project.responsibilities && (
-                                            <div className="info-section">
-                                                <h2 className="section-label">MY RESPONSIBILITIES & FEATURES I IMPLEMENTED</h2>
-                                                <div className="section-content">
-                                                    <ul className="custom-list">
-                                                        {project.responsibilities.map((item, idx) => (
-                                                            <li key={idx}>{item}</li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        )}
+                            {/* Right Column */}
+                            <div className="details-side-col">
+                                <div className="detail-block" style={{ marginBottom: '50px' }}>
+                                    <h3 className="detail-caption" style={{ color: '#555', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '2px', marginBottom: '25px' }}>TECHNICAL SHEET</h3>
+                                    <div className="tech-stack-list" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                                        {project.tools?.map((tool, idx) => (
+                                            <div key={idx} style={{ color: '#fff', fontSize: '1.1rem', fontWeight: 600 }}>{tool}</div>
+                                        ))}
                                     </div>
 
-                                    <aside className="info-sidebar">
-                                        {project.tools && (
-                                            <div className="info-section">
-                                                <h2 className="section-label">TECHNICAL SHEET</h2>
-                                                <div className="section-content">
-                                                    <ul className="tech-list">
-                                                        {project.tools.map((tool, idx) => (
-                                                            <li key={idx}>{tool}</li>
-                                                        ))}
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                    {/* Pill Buttons Header Actions */}
+                                    <div className="pill-actions" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '40px' }}>
+                                        {project.live && (
+                                            <a href={project.live} target="_blank" rel="noopener noreferrer" style={{
+                                                padding: '10px 20px',
+                                                borderRadius: '40px',
+                                                background: '#fff',
+                                                border: '1px solid #fff',
+                                                color: '#000',
+                                                fontSize: '0.75rem',
+                                                fontWeight: 900,
+                                                textDecoration: 'none',
+                                                textTransform: 'uppercase',
+                                                letterSpacing: '1px'
+                                            }}>LIVE SITE</a>
                                         )}
-
-                                        <div className="info-section">
-                                            <h2 className="section-label">LIVE LINKS</h2>
-                                            <div className="section-content actions-stack">
-                                                {project.live && (
-                                                    <a href={project.live} target="_blank" rel="noopener noreferrer" className="btn-action primary">
-                                                        View Live Website <ExternalLink size={16} />
-                                                    </a>
-                                                )}
-                                                {project.behance && (
-                                                    <a href={project.behance} target="_blank" rel="noopener noreferrer" className="btn-action secondary">
-                                                        Behance Case Study <ExternalLink size={16} />
-                                                    </a>
-                                                )}
-                                                {project.github && (
-                                                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="btn-action secondary">
-                                                        GitHub Repository <Github size={16} />
-                                                    </a>
-                                                )}
-                                            </div>
-                                        </div>
-                                    </aside>
+                                        {project.behance && (
+                                            <a href={project.behance} target="_blank" rel="noopener noreferrer" style={{
+                                                padding: '10px 20px',
+                                                borderRadius: '40px',
+                                                background: '#000',
+                                                border: '1px solid #333',
+                                                color: '#fff',
+                                                fontSize: '0.75rem',
+                                                fontWeight: 900,
+                                                textDecoration: 'none',
+                                                textTransform: 'uppercase',
+                                                letterSpacing: '1px'
+                                            }}>CASE STUDY</a>
+                                        )}
+                                        {project.github && (
+                                            <a href={project.github} target="_blank" rel="noopener noreferrer" style={{
+                                                padding: '10px 20px',
+                                                borderRadius: '40px',
+                                                background: '#000',
+                                                border: '1px solid #333',
+                                                color: '#fff',
+                                                fontSize: '0.75rem',
+                                                fontWeight: 900,
+                                                textDecoration: 'none',
+                                                textTransform: 'uppercase',
+                                                letterSpacing: '1px'
+                                            }}>GITHUB</a>
+                                        )}
+                                    </div>
                                 </div>
                             </div>
-                        </section>
-                    </>
-                )}
+                        </div>
+                    </div>
+                </section>
+
             </main>
 
             <Footer />
