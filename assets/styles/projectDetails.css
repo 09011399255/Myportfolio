@@ -3,6 +3,14 @@
     background-color: #000;
     color: #fff;
     padding-top: 100px;
+    /* Base padding for desktop */
+}
+
+@media (max-width: 768px) {
+    .project-page {
+        padding-top: 140px;
+        /* More padding on mobile for taller wrapped headers */
+    }
 }
 
 .project-page-header {
@@ -11,16 +19,23 @@
     left: 0;
     width: 100%;
     z-index: 100;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 24px 0;
+    padding: 30px 0;
+}
+
+@media (max-width: 768px) {
+    .project-page-header {
+        padding: 20px 0;
+    }
 }
 
 .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .back-button {
@@ -33,31 +48,42 @@
     justify-content: center;
     color: #fff;
     transition: all 0.3s;
+    background: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 .back-button:hover {
     background: #fff;
     color: #000;
-    transform: translateX(-5px);
 }
 
 .project-page-title {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 2.5rem;
+    font-weight: 900;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 1px;
+    text-align: center;
+    line-height: 1.1;
+    flex: 1;
 }
 
 @media (max-width: 768px) {
     .project-page-title {
-        font-size: 1rem;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-page-title {
+        font-size: 1.2rem;
     }
 }
 
 .header-spacer {
     width: 44px;
-    /* Matches back button for centering title */
+    flex-shrink: 0;
 }
 
 .project-page-main {

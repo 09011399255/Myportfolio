@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowLeft, ExternalLink, Github } from 'lucide-react';
 import { Project } from '@/utils/data';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
 import Footer from './footer';
@@ -14,6 +15,7 @@ interface ProjectDetailsProps {
 }
 
 const ProjectDetails = ({ project }: ProjectDetailsProps) => {
+    const router = useRouter();
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const handleNextImage = useCallback(() => {
@@ -31,34 +33,20 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
 
     return (
         <div className={`project-page`}>
-            <header className="project-page-header" style={{ padding: '60px 0 20px' }}>
+            <header className="project-page-header">
                 <div className="container">
-                    <div className="project-header-top" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', width: '100%' }}>
-                        <Link href="/" className="back-button-circle" style={{
-                            width: '44px',
-                            height: '44px',
-                            borderRadius: '50%',
-                            border: '1px solid rgba(255,255,255,0.2)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: '#fff',
-                            transition: 'all 0.3s ease'
-                        }}>
+                    <div className="header-inner">
+                        <button
+                            onClick={() => router.back()}
+                            className="back-button"
+                            style={{ flexShrink: 0 }}
+                        >
                             <ArrowLeft size={20} />
-                        </Link>
-
-                        <h1 className="project-top-title" style={{
-                            fontSize: '2.5rem',
-                            fontWeight: 900,
-                            textTransform: 'uppercase',
-                            letterSpacing: '4px',
-                            margin: 0,
-                            color: '#fff'
-                        }}>
+                        </button>
+                        <h1 className="project-page-title">
                             {project.name}
                         </h1>
-                        <div style={{ width: '44px' }}></div>
+                        <div className="header-spacer"></div>
                     </div>
                 </div>
             </header>
