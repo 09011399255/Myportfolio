@@ -65,7 +65,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
 
             <main className="project-page-main">
                 {/* Standard Project Preview (Conova Style) */}
-                <section className="project-visuals" style={{ marginTop: '40px' }}>
+                <section className="project-visuals">
                     <div className="container">
                         <div className="carousel-wrapper" style={{
                             background: '#0a0a0a',
@@ -75,7 +75,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
                             border: '1px solid rgba(255,255,255,0.05)'
                         }}>
                             {project.images && project.images.length > 0 ? (
-                                <div className="project-carousel" style={{ height: '700px', position: 'relative' }}>
+                                <div className="project-carousel" style={{ position: 'relative' }}>
                                     <motion.div
                                         key={currentImageIndex}
                                         initial={{ opacity: 0 }}
@@ -90,7 +90,7 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
                                             fill
                                             className="main-img"
                                             priority
-                                            style={{ objectFit: 'contain', padding: '60px' }}
+                                            style={{ objectFit: 'contain' }}
                                         />
                                     </motion.div>
 
@@ -138,13 +138,9 @@ const ProjectDetails = ({ project }: ProjectDetailsProps) => {
                     </div>
                 </section>
 
-                <section className="project-details-grid" style={{ paddingBottom: '120px', borderTop: '1px solid rgba(255,255,255,0.1)', marginTop: '80px', paddingTop: '80px' }}>
+                <section className="project-details-grid">
                     <div className="container">
-                        <div className="details-layout" style={{
-                            display: 'grid',
-                            gridTemplateColumns: '1.8fr 1fr',
-                            gap: '120px'
-                        }}>
+                        <div className="details-layout">
                             {/* Left Column */}
                             <div className="details-main-col">
                                 <div className="detail-block" style={{ marginBottom: '60px' }}>
